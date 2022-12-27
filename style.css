@@ -1,0 +1,63 @@
+body {
+	height: 100vh;
+}
+.nav-item {
+	margin-left: 20px;
+}
+
+.homepage-jumbotron {
+	background-image: url("img/chalkboard.jpg");
+	background-position: center;
+	background-size: cover;
+	margin-top: 20px;
+/*	height: 50%;*/
+}
+
+.white {
+	background-color: white;
+	padding: 11px;
+}
+
+.display-handwriting {
+	font-family: 'Patrick Hand', cursive;
+}
+
+.card-display {
+	font-weight: 200;
+	font-size: 2rem;
+}
+
+.display-8 {
+	font-weight: 200;
+	font-size: 1rem;
+}
+
+#board {
+	margin-top: 100px;
+}
+.letters {
+	display: block;
+	float: left;
+	width: 100px;
+	height: 100px;
+	border-radius: 5px;
+	font-size: 5.5em;
+	font-weight: bold;
+	text-align: center;
+	cursor: pointer;
+}
+
+.vowel {
+	background-color: #f7e00f;
+}
+
+.consonant {
+	background-color: #2bc1e3;
+}
+
+.workarea {
+	clear: both;
+	height: 80vh;
+	width: 80%;
+	border: 10px solid black;
+}
