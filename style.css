@@ -1,5 +1,5 @@
 body {
-	height: 100vh;
+/*	height: 100vh;*/
 }
 .nav-item {
 	margin-left: 20px;
@@ -116,4 +116,34 @@ body {
 
 .checked {
 	color: orange;
+}
+
+.contact-subtext {
+	font-size: 16px;
+}
+
+.giant-font {
+	font-size: 200px;
+}
+
+.flashcard {
+	border: 1px solid lightgrey;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	padding-left: 20px;
+	padding-right: 20px;
+	width: 100%;
+	background-image: url("img/slide-general-bg-learntodecode.jpg");
+	background-size: cover;
+	background-position: center center;
+	box-shadow: 2px 2px 2px 2px lightgrey;
+}
+
+.settings-button {
+	margin-bottom: 10px;
+}
+
+.chosen {
+	background-color: lightblue;
+	color: black;
 }
