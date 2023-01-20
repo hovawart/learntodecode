@@ -4,12 +4,17 @@ body {
 .nav-item {
 	margin-left: 20px;
 }
-
+.homepage-jumbotron-index {
+	background-image: url("img/ltd-bg-4.jpg") !important;
+}
 .homepage-jumbotron {
-	background-image: url("img/cyber.jpg");
-	background-position: center;
+	margin-top: 40px !important;
+	background-image: url("img/ltd-bg-4.jpg");
+	background-position: top center;
 	background-size: cover;
 	margin-top: 20px;
+	color: rgb(75, 75, 75) !important;
+/*	color: #0a7e8e !important;*/
 /*	height: 50%;*/
 }
 
