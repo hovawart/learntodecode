@@ -7,3 +7,10 @@ function passcode() {
 		location.href="resources.html"
 	}
 }
+
+window.onload = function() {
+	var img = document.querySelectorAll('img');
+	if (img.src==="img/tutor-ashley1.png") {
+		console.log("hi");
+	}
+}
