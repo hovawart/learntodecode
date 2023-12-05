@@ -131,6 +131,12 @@ body {
 	font-size: 200px;
 }
 
+.large-font {
+	font-size: 100px;
+	min-height: 300px;
+	padding-top: 60px;
+}
+
 .flashcard {
 	border: 1px solid lightgrey;
 	padding-top: 30px;
@@ -156,3 +162,15 @@ body {
 .no-display {
 	display: none;
 }
+/* 
+.text-block-white {
+	border: 5px double white;
+	border-radius: 10px;
+} */
+
+.text-block-black {
+	border: 5px double black;
+	border-radius: 10px;
+}
+
+
