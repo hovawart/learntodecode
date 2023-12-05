@@ -50,8 +50,12 @@
 					<span style="color: white; font-style: italic; font-size: 20px; position: relative; top: 100px;">_</span>
 
 				</div>
-				<div class="btn btn-primary btn-block mt-2 mr-auto" onclick="start()">Next</div>
-				<!-- <div class="btn btn-success btn-block mt-2 mr-auto" id="showHint">Show Hint</div> -->
+
+                <div class="btn-group d-flex" role="group" aria-label="Basic example">
+                    <div class="btn btn-primary btn-block mt-2 mr-auto" id="goBack" style="border-right: 2px solid white;">Back</div>
+                    <div class="btn btn-primary btn-block mt-2 mr-auto" onclick="start()" style="border-left: 2px solid white;">Next</div>
+                </div>
+				
 
 				<div class="card mt-4">
 					<div class="card-header text-center">
@@ -94,6 +98,7 @@
     	var content = document.getElementById("content");
     	var settings = document.getElementsByClassName("settings-button")
         var lvl = document.getElementById("level-num");
+        var goBack = document.getElementById("goBack");
         	
         var list1 = [];
         var list2 = [];
@@ -131,12 +136,22 @@
         }
 			
 
+
     	function newCard(list) {
-            content.innerHTML = list[num];
-            num++
             if (num >= list.length) {
                 num = 0;
             }
+            goBack.onclick = function() {
+                if (num >= 1) {
+                    console.log("hey")
+                    num -= 1;
+                    content.innerHTML = list[num];
+                } else {
+                    num = num;
+                } 
+            }
+            content.innerHTML = list[num];
+            num++
     	}
 
 
