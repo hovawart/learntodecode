@@ -137,22 +137,22 @@
     	console.log(settings)
 
     	function retrieve() {
-  	    for (i = 0; i < settings.length; i++) {
-  	      settings[i].classList.remove("chosen");
-  	      console.log(settings[i]);
-  	    }
-  	  }
-			
-			function addChosen(param) {
-				settings[param].onclick = function() {
-					retrieve()
-					settings[param].classList.add("chosen");
-				}
-			}		
-
-			for (var i = 0; i < settings.length; i++) {
-				addChosen(i)
+			for (i = 0; i < settings.length; i++) {
+			settings[i].classList.remove("chosen");
+			console.log(settings[i]);
 			}
+		}
+			
+		function addChosen(param) {
+			settings[param].onclick = function() {
+				retrieve()
+				settings[param].classList.add("chosen");
+			}
+		}		
+
+		for (var i = 0; i < settings.length; i++) {
+			addChosen(i)
+		}
 			
 			
     	function multiply(mult1, mult2) {
