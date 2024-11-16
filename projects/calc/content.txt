@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Calculator</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="calculator">
+      <div class="display"></div>
+
+      <div class="button digit"></div>
+      <div class="button digit"></div>
+      <div class="button digit"></div>
+      <div class="button operation"></div>
+
+      <div class="button digit"></div>
+      <div class="button digit"></div>
+      <div class="button digit"></div>
+      <div class="button operation"></div>
+
+      <div class="button digit"></div>
+      <div class="button digit"></div>
+      <div class="button digit"></div>
+      <div class="button operation"></div>
+
+      <div class="button operation"></div>
+      <div class="button digit"></div>
+      <div class="button operation"></div>
+      <div class="button operation"></div>
+    </div>
+  </div>
+
+  <script>
+    const display = document.querySelector(".display");
+    document.addEventListener("click", (ev) => {
+      if (ev.target.classList.contains("button")) {
+        const content = ev.target.innerHTML;
+        if (content === "C") {
+          display.innerHTML = "";
+        } else if (content === "=") {
+          try {
+            display.innerHTML = eval(display.innerHTML);
+          } catch (e) {
+            display.innerHTML = "Error";
+          }
+        } else {
+          display.append(content);
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
