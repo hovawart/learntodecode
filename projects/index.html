@@ -87,17 +87,22 @@
                 handle the button actions.</p>
               <div id="html" class="editor mb-3"></div>
               <h2>The CSS</h2>
-              <p>The CSS below places the display and buttons horizontally across the calculator. The white buttons are intended to be for digits. The light-blue buttons are intended to be for the operations, addition, subtraction, multiplication, and division. Clear and equals round out the light-blue buttons.</p>
-              <p>The button array starts at the top-left and runs from left to right for each row. For the first row, there are 3 digits, then 1 operator. Same for the second and third rows. For the fourth row, there is 1 operator, 1 digit, then 2 more operators.</p>
+              <p>The CSS below places the display and buttons horizontally across the calculator. The white buttons are
+                intended to be for digits. The light-blue buttons are intended to be for the operations, addition,
+                subtraction, multiplication, and division. Clear and equals round out the light-blue buttons.</p>
+              <p>The button array starts at the top-left and runs from left to right for each row. For the first row,
+                there are 3 digits, then 1 operator. Same for the second and third rows. For the fourth row, there is 1
+                operator, 1 digit, then 2 more operators.</p>
               <div id="css" class="editor mb-3"></div>
-              <h2>The Code</h2>              
+              <h2>The Code</h2>
               <h3>Arrays</h3>
               <p>Since JavaScript arrays are zero-based, the button indexes are numbered 0 through 15.</p>
               <p>Here is an example array for each character that represents each of the 16 buttons:</p>
               <pre>
 const buttonTexts = ["1", "2", "3", "+", "4", "5", "6", "-", "7", "8", "9", "*", "C", "0", "=", "/"];
               </pre>
-              <p>Another way to write this array will make it more obvious how the buttons are intended to be arranged:</p>
+              <p>Another way to write this array will make it more obvious how the buttons are intended to be arranged:
+              </p>
               <pre>
 const buttonTexts = [ "1", "2", "3", "+",
                       "4", "5", "6", "-",
@@ -105,27 +110,29 @@ const buttonTexts = [ "1", "2", "3", "+",
                       "C", "0", "=", "/" ];
               </pre>
               <h3>Buttons</h3>
-              <p>The buttons themselves are represented by HTML div elements. An array of the buttons can be retrieved with this code:</p>
+              <p>The buttons themselves are represented by HTML div elements. An array of the buttons can be retrieved
+                with this code:</p>
               <pre>
 const buttons = document.querySelectorAll(".button");
               </pre>
               <p>Like the array for the buttonTexts above, the button array has 16 elements indexed 0 through 15.</p>
               <h3>For Loops</h3>
-              <p>Using a for-loop, we can loop through the buttons to set their text to the cooresponding character in the buttonTexts array. Here is an example:</p>
+              <p>Using a for-loop, we can loop through the buttons to set their text to the cooresponding character in
+                the buttonTexts array. Here is an example:</p>
               <pre>
 for (let i = 0; i < buttons.length; i++) {
   const button = buttons[i];
 }
               </pre>
               <p>We can use that same loop to retrieve each buttonText as well:</p>
-<pre>
+              <pre>
 for (let i = 0; i < buttons.length; i++) {
   const button = buttons[i];
   const buttonText = buttonTexts[i];
 }
 </pre>
               <p>Putting it all together, we can set the button text with the buttonText character like so:</p>
-<pre>
+              <pre>
 for (let i = 0; i < buttons.length; i++) {
   const button = buttons[i];
   const buttonText = buttonTexts[i];
@@ -134,7 +141,7 @@ for (let i = 0; i < buttons.length; i++) {
 </pre>
               <h3>Functions</h3>
               <p>Functions are written with the following structure,</p>
-<pre>
+              <pre>
 function myfunction() {
   // some code here:
   console.log("hello");
@@ -142,29 +149,31 @@ function myfunction() {
 </pre>
               <p>The example function above is referred to as a "no-args" function.</p>
               <p>Functions can optionally have 1 or more arguments that are variables avaiable to the function,</p>
-<pre>
+              <pre>
 function myfunction(message, name) {
   console.log(message + " " + name);
 }
 </pre>
               <p>Functions are called by their name and arguments,</p>
-<pre>
+              <pre>
   myfunction("hello", "bob");
 </pre>
               <p>This function call results in "hello bob" being printed to the console window.</p>
               <p>Function can also return a value,</p>
-<pre>
+              <pre>
 function myfunction(message, name) {
   return message + " " + name;
 }
 </pre>
-              <p>Calling this function will also result in "hello bob" being printed to the console, but using the return value instead,</p>
-<pre>
+              <p>Calling this function will also result in "hello bob" being printed to the console, but using the
+                return value instead,</p>
+              <pre>
 const value = myfunction("hello", "bob");
 console.log(value);
 </pre>
               <h2>Putting it all together</h2>
-              <p>In the editor below, create a function to populate the buttons, between the script tags, with digits 0 through 9 as well as the operation buttons for +, -, *, /, C, and =, using the following steps:</p>
+              <p>In the editor below, create a function to populate the buttons, between the script tags, with digits 0
+                through 9 as well as the operation buttons for +, -, *, /, C, and =, using the following steps:</p>
               <ol>
                 <li>Declare a variable named "buttonTexts" that contains the text for each button</li>
                 <li>Declare a variable named "buttons" that contains the buttons divs</li>
@@ -180,7 +189,7 @@ console.log(value);
 
               <div id="solution-code">
                 <h2>The Solution</h2>
-<pre>
+                <pre>
 const buttonTexts = [ "1", "2", "3", "+",
                       "4", "5", "6", "-",
                       "7", "8", "9", "*",
