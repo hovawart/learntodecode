@@ -271,7 +271,9 @@ fillButtons();
 
     let run = (values) => {
       require.config({
-        paths: { vs: "https://cdn.jsdelivr.net/npm/monaco-editor@0.27.0/min/vs" }
+        paths: { vs: "https://cdn.jsdelivr.net/npm/monaco-editor@0.27.0/min/vs",
+                 esprima: "https://unpkg.com/esprima@~4.0/dist/esprima.js"
+         }
       });
       require(["vs/editor/editor.main"], function () {
 
@@ -390,7 +392,15 @@ fillButtons();
           // updatePreview(e);
         });
         document.getElementById("run").addEventListener("click", (ev) => {
-          updatePreview();
+          require(['esprima'], function (parser) {
+            try {
+              var syntax = parser.parse(scriptEditor.getValue().replace("<script>", "").replace(/<\/script>/, ""));
+              updatePreview();
+            } catch (error) {
+              console.log(error);
+              alert(error.description + " at line number " + error.lineNumber + ", column " + error.column);
+            }
+          });
         });
         document.getElementById("solution").addEventListener("click", (ev) => {
           const main = document.getElementById("main");
@@ -430,6 +440,7 @@ fillButtons();
       run(doc);
     })();
   </script>
+
 </body>
 
 </html>
