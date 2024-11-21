@@ -395,10 +395,23 @@ fillButtons();
           require(['esprima'], function (parser) {
             try {
               var syntax = parser.parse(scriptEditor.getValue().replace("<script>", "").replace(/<\/script>/, ""));
+              eval("'use strict'; " + scriptEditor.getValue().replace("<script>", "").replace(/<\/script>/, ""));
               updatePreview();
             } catch (error) {
-              console.log(error);
-              alert(error.description + " at line number " + error.lineNumber + ", column " + error.column);
+              if (error.description) {
+                alert(error.description + " at line number " + error.lineNumber + ", column " + error.column);
+              } else {
+                let locSplit = error.stack.split("<anonymous>:".split(")"));
+                if (locSplit.length > 1) {
+                  locSplit = locSplit[1].split(")")[0].split(":");
+                  const description = error.stack.split("\n")[0];
+                  const lineNumber = locSplit[0];
+                  const column = locSplit[1];
+                  alert(description + " at line number " + lineNumber + ", column " + column);
+                } else {
+                  alert(error.stack);
+                }
+              }
             }
           });
         });
@@ -440,6 +453,7 @@ fillButtons();
       run(doc);
     })();
   </script>
+
 
 </body>
 
