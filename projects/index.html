@@ -272,6 +272,7 @@ fillButtons();
     let run = (values) => {
       require.config({
         paths: { vs: "https://cdn.jsdelivr.net/npm/monaco-editor@0.27.0/min/vs",
+                 espree: "https://cdn.jsdelivr.net/npm/espree@10.3.0/espree.js",
                  esprima: "https://unpkg.com/esprima@~4.0/dist/esprima.js"
          }
       });
@@ -392,7 +393,7 @@ fillButtons();
           // updatePreview(e);
         });
         document.getElementById("run").addEventListener("click", (ev) => {
-          require(['esprima'], function (parser) {
+          require(['espree'], function (parser) {
             try {
               var syntax = parser.parse(scriptEditor.getValue().replace("<script>", "").replace(/<\/script>/, ""));
               eval("'use strict'; " + scriptEditor.getValue().replace("<script>", "").replace(/<\/script>/, ""));
