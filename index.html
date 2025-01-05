@@ -1,222 +1,49 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <style>
-    	.card-group-bg {
-    		/* background-color: #edf5f7; */
-			width: 100%;
-			padding: 20px;
-    	}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
 
-		.jumbotron {
-			margin-bottom: 0px !important;
-		}
-    </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
 
-    <title>Learn to Decode | Home</title>
-  </head>
-  <body>
+  <style>
+    @font-face {
+      font-family: 'Film Cryptic';
+      src: url('FilmCryptic.woff2') format('woff2'), url('FilmCryptic.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+    
+    .chalk {
+        font-family: 'Film Cryptic';
+        font-weight: normal;
+        font-style: normal;
+    }
+  </style>
+  <title>Learn to Decode | Home</title>
+</head>
 
+<body>
+  <div id="navbar"></div>
+  <div id="jumbotron"></div>
+  <div id="content"></div>
+  <div id="featured"></div>
+  <div id="footer"></div>
 
-  	<nav class="navbar navbar-expand-sm  navbar-dark bg-dark fixed-top">
-	  <a class="navbar-brand" href="#">Learn to Decode</a>
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	    <span class="navbar-toggler-icon"></span>
-	  </button>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
 
-	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-	    <ul class="navbar-nav mr-auto">
-	      <li class="nav-item active">
-	        <a class="nav-link" href="/#">Home <span class="sr-only">(current)</span></a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link  disabled" aria-disabled="true" href="/about.html">About</a>
-	      </li>
-		  <li class="nav-item">
-	        <a class="nav-link disabled" aria-disabled="true" href="/contact.html">Contact</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" onclick="passcode()">Resources</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="/projects/#calc">Projects</a>
-	      </li>
-	    </ul>
-	  </div>
-	</nav>
-	<div class="jumbotron jumbotron-fluid homepage-jumbotron homepage-jumbotron-index text-white text-center">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3"></div>
-				<div class="col-md-6"><img src="img/ltd-logo-horizontal.png" class="img-fluid mt-3" alt="Learn to Decode Logo" style="margin-right: 0px;"></div>
-				<div class="col-md-3"></div>
-			</div>  
-		  <!-- <h1 class="display-1 mt-4"></h1> -->
-		  <!-- <p class="lead text-dark">Orton-Gillingham, ESL / Accent Reduction</p> -->
-		</div>
-	</div>
-
-	<div class="contianer">
-  		<div class="row">
-	  		<div class="col-md-3"></div>
-	  		<div class="col-md-6">
-	  			<!-- <img src="img/learntodecode.png" class="img-fluid center-block"> -->
-	  			<h1 class="display-1 mt-5 text-center" style="font-style: italic; font-family: 'Times New Roman', Times, serif; color: #107b8a;">Coming Soon</h1>
-	  		</div>
-	  		<div class="col-md-3"></div>
-	  	</div>
-  	</div>
-
-	<!-- <div class="container-fluid card-group-bg">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="card-deck">
-
-					<div class="card">
-						<img src="img/chalkboard.jpg" class="card-img-top" alt="scrabble letters">
-						<div class="card-body">
-						  <h5 class="card-title">Orton-Gillingham</h5>
-						  <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-						  <button class="btn btn-primary" href="#">More</button>
-						</div>
-					  </div>
-
-					  <div class="card">
-						<img src="img/chalkboard.jpg" class="card-img-top" alt="scrabble letters">
-						<div class="card-body">
-						  <h5 class="card-title">ESL</h5>
-						  <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-						  <button class="btn btn-primary" href="#">More</button>
-						</div>
-					  </div>
-
-					  <div class="card">
-						<img src="img/chalkboard.jpg" class="card-img-top" alt="scrabble letters">
-						<div class="card-body">
-						  <h5 class="card-title">Other</h5>
-						  <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-						  <button class="btn btn-primary" href="#">More</button>
-						</div>
-					  </div>
-					  
-					</div>
-				</div>
-			</div>
-		</div>
-		
-	</div>
-
-	<div class="container-fluid pt-4 pb-4" style="background-color: #5cd3e3;">
-		<div class="container">
-			<div class="row p-4 text-block-white">
-					<div class="col-md-12 text-white">
-						<h1 class="display-5">Lorem Ipsum</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="container-fluid card-group-bg">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="card-deck">
-
-					  <div class="card">
-						<img src="img/chalkboard.jpg" class="card-img-top" alt="scrabble letters">
-						<div class="card-body">
-						  <h5 class="card-title">Orton-Gillingham</h5>
-						  <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-						  <button class="btn btn-primary" href="#">More</button>
-						</div>
-					  </div>
-
-
-					  <div class="card">
-						<img src="img/chalkboard.jpg" class="card-img-top" alt="scrabble letters">
-						<div class="card-body">
-						  <h5 class="card-title">ESL</h5>
-						  <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-						  <button class="btn btn-primary" href="#">More</button>
-						</div>
-					  </div>
-
-
-					  <div class="card">
-						<img src="img/chalkboard.jpg" class="card-img-top" alt="scrabble letters">
-						<div class="card-body">
-						  <h5 class="card-title">Other</h5>
-						  <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-						  <button class="btn btn-primary" href="#">More</button>
-						</div>
-					  </div>
-					  
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="container-fluid pt-4 pb-4" style="background-color: #4c93f3;">
-		<div class="container">
-			<div class="row p-4 text-block-white">
-			
-					<div class="col-md-12 text-white">
-						<h1 class="display-5">Lorem Ipsum</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					</div>
-					
-			</div>
-		</div>
-	</div>
-
-	<div class="container-fluid card-group-bg">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="card">
-						<div class="card-header">
-						  Featured
-						</div>
-						<div class="card-body">
-						  <h5 class="card-title">Special title treatment</h5>
-						  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-						  <a href="#" class="btn btn-primary">Go somewhere</a>
-						</div>
-					  </div>
-				</div>
-			</div>
-		</div>
-	</div> -->
-
-	<footer class="bg-dark text-center text-white fixed-bottom">
-  
-		<div class="text-center p-3 bg-dark" style="font-family: 'Times New Roman', times, serif; font-style: italic; color: #ffffff80">
-		  © 2023 Learn to Decode
-		</div>
-		<!-- Copyright -->
-	</footer>
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
-    <script src="script.js">
-    </script>
-
-
-
-  </body>
+  <script src="script.js"></script>
+</body>
 </html>
+

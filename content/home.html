@@ -1,0 +1,126 @@
+<style>
+  .card .chalk {
+    position: absolute;
+    color: white;
+    font-size: 2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    text-align: center;
+  }
+
+  @media (max-width: 767.98px) {
+    .card .chalk {
+      font-size: 1.5rem;
+      height: 98px;
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    .card .chalk {
+      font-size: 3rem;
+      height: 280px;
+    }
+  }
+
+  @media (min-width: 1199.98px) {
+    .card .chalk {
+      font-size: 2.5rem;
+      height: 232px;
+    }
+  }
+</style>
+<div class="meta-data title">Subjects</div>
+<div class="container-fluid card-group-bg">
+  <div class="container">
+    <div id="card-deck1" class="row">
+    </div>
+  </div>
+
+</div>
+
+<div class="container-fluid pt-4 pb-4" style="background-color: #5cd3e3;">
+  <div class="container">
+    <div class="row p-4 text-block-white">
+      <!-- <div class="text-block"> -->
+      <div class="col-md-12 text-white">
+        <h1 class="display-5">Lorem Ipsum</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+          laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+          voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+          non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      <!-- <div class="col-md-6">
+            <img class="img-fluid" src="img/greetings.png" alt="greetings in many languages.">
+          </div> -->
+      <!-- </div> -->
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid card-group-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            Featured
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.
+            </p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  console.log("hello");
+  (async () => {
+    const template = await (await fetch('content/subject-card-template.html')).text();
+    console.log("template", template);
+
+    const data = [
+      {
+        "subject": "Orton-Gillingham",
+        "description": "This card has supporting text below as a natural lead-in to additional content."
+      },
+      {
+        "subject": "English as a Second Language",
+        "description": "This card has supporting text below as a natural lead-in to additional content."
+      },
+      {
+        "subject": "Grammar",
+        "description": "This card has supporting text below as a natural lead-in to additional content."
+      },
+      {
+        "subject": "Math",
+        "description": "This card has supporting text below as a natural lead-in to additional content."
+      },
+      {
+        "subject": "Executive Functioning",
+        "description": "This card has supporting text below as a natural lead-in to additional content."
+      },
+      {
+        "subject": "Reading",
+        "description": "This card has supporting text below as a natural lead-in to additional content."
+      }
+    ];
+
+    let html = "";
+    for (let i = 0; i < data.length; i++) {
+      const item = data[i];
+      html += template
+        .replaceAll("${subject}", item.subject)
+        .replaceAll("${description}", item.description);
+    }
+    const deck = document.getElementById("card-deck1");
+    deck.innerHTML = html;
+  })();
+</script>

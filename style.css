@@ -1,176 +1,200 @@
 body {
-/*	height: 100vh;*/
+  /*  height: 100vh;*/
 }
+
+.meta-data {
+  display: none;
+}
+
 .nav-item {
-	margin-left: 20px;
+  margin-left: 20px;
 }
+
 .homepage-jumbotron-index {
-	background-image: url("img/ltd-bg-4.jpg") !important;
+  background-image: url("img/ltd-bg-4.jpg") !important;
 }
+
 .homepage-jumbotron {
-	margin-top: 40px !important;
-	background-image: url("img/ltd-bg-4.jpg");
-	background-position: top center;
-	background-size: cover;
-	margin-top: 20px;
-	color: rgb(75, 75, 75) !important;
-/*	color: #0a7e8e !important;*/
-/*	height: 50%;*/
+  margin-top: 40px !important;
+  background-image: url("img/ltd-bg-4.jpg");
+  background-position: top center;
+  background-size: cover;
+  margin-top: 20px;
+  color: rgb(75, 75, 75) !important;
+  /*  color: #0a7e8e !important;*/
+  /*  height: 50%;*/
 }
 
 .card-body {
-	font-family: "Times New Roman", Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
-.navbar-brand { 
-	font-family: "Times New Roman", Times, serif;
-	font-style: italic;
+.navbar-brand {
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  font-size: 1.26rem;
 }
 
 .nav-link {
-	font-family: "Times New Roman", Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }
+
 .white {
-	background-color: white;
-	padding: 11px;
+  background-color: white;
+  padding: 11px;
 }
 
 .display-1 {
-	font-family: "Times New Roman", Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .display-handwriting {
-	font-family: 'Patrick Hand', cursive;
+  font-family: 'Patrick Hand', cursive;
 }
 
 .card-display {
-	font-weight: 200;
-	font-size: 2rem;
+  font-weight: 200;
+  font-size: 2rem;
 }
 
 .display-8 {
-	font-weight: 200;
-	font-size: 1rem;
+  font-weight: 200;
+  font-size: 1rem;
 }
 
 #board {
-	margin-top: 100px;
+  margin-top: 100px;
 }
+
 .letters {
-	display: block;
-	float: left;
-	width: 100px;
-	height: 100px;
-	border-radius: 5px;
-	font-size: 5.5em;
-	font-weight: bold;
-	text-align: center;
-	cursor: pointer;
+  display: block;
+  float: left;
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  font-size: 5.5em;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
 }
 
 .vowel {
-	background-color: #f7e00f;
+  background-color: #f7e00f;
 }
 
 .consonant {
-	background-color: #2bc1e3;
+  background-color: #2bc1e3;
 }
 
 .workarea {
-	clear: both;
-	height: 80vh;
-	width: 80%;
-	border: 10px solid black;
+  clear: both;
+  height: 80vh;
+  width: 80%;
+  border: 10px solid black;
 }
 
 .nav-link {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .dropdown a {
-	color: #ffffff80;
-	text-decoration: none;
+  color: #ffffff80;
+  text-decoration: none;
 }
 
 .dropdown a:hover {
-	text-decoration: none;
+  text-decoration: none;
 }
+
 .dropdown li:hover {
-	background-color: #6c757d;
-	text-decoration: none;
+  background-color: #6c757d;
+  text-decoration: none;
 }
 
 .dropdown li {
-	padding: 10px;
+  padding: 10px;
 }
 
-.display-5, .display-2 {
-	font-family: "Times New Roman", times, serif;
+.display-5,
+.display-2 {
+  font-family: "Times New Roman", times, serif;
 }
 
+.display-5 {
+  font-size: 3rem;
+}
 
 .info-list {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .default-font {
-	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .checked {
-	color: orange;
+  color: orange;
 }
 
 .contact-subtext {
-	font-size: 16px;
+  font-size: 16px;
 }
 
 .giant-font {
-	font-size: 200px;
+  font-size: 200px;
 }
 
 .large-font {
-	font-size: 100px;
-	min-height: 300px;
-	padding-top: 60px;
+  font-size: 100px;
+  min-height: 300px;
+  padding-top: 60px;
 }
 
 .flashcard {
-	border: 1px solid lightgrey;
-	padding-top: 30px;
-	padding-bottom: 30px;
-	padding-left: 20px;
-	padding-right: 20px;
-	width: 100%;
-	background-image: url("img/slide-general-bg-learntodecode.jpg");
-	background-size: cover;
-	background-position: center center;
-	box-shadow: 2px 2px 2px 2px lightgrey;
+  border: 1px solid lightgrey;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+  background-image: url("img/slide-general-bg-learntodecode.jpg");
+  background-size: cover;
+  background-position: center center;
+  box-shadow: 2px 2px 2px 2px lightgrey;
 }
 
 .settings-button {
-	margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .chosen {
-	background-color: lightblue;
-	color: black;
+  background-color: lightblue;
+  color: black;
 }
 
 .no-display {
-	display: none;
+  display: none;
 }
+
 /* 
 .text-block-white {
-	border: 5px double white;
-	border-radius: 10px;
+  border: 5px double white;
+  border-radius: 10px;
 } */
 
 .text-block-black {
-	border: 5px double black;
-	border-radius: 10px;
+  border: 5px double black;
+  border-radius: 10px;
 }
 
+.card-group-bg {
+  /* background-color: #edf5f7; */
+  width: 100%;
+  padding: 20px;
+}
 
+.jumbotron {
+  margin-bottom: 0px !important;
+}
