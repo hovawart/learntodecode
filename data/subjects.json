@@ -1,0 +1,38 @@
+[
+  {
+    "subject": "Orton-Gillingham",
+    "description": "Orton-Gillingham is a multi-sensory method for teaching reading and spelling skills to students with dyslexia. Our program is built directly from The Orton-Gillingham Method developed by Anna Gillingham, Betsy Stillman, and Samuel Orton. After completing the Orton-Gillingham program, students can advance to learning Grammar, Language Arts, Reading Copmrehension, and Writing Skills."
+  },
+  {
+    "subject": "English as a Second Language",
+    "description": "We teach English with multi-sensory learning techniques to help students master their new vocabulary. Our program uses immersive visual, auditory, and kinesthetic learning techniques."
+  },
+  {
+    "subject": "Math",
+    "description": "In a math tutoring session, students can bring math questions from school, or we can provide you with math worksheets and introduce new concepts. Our tutors are experienced in using multi-sensory learning strategies and tailoring teaching materials to each student's specific needs, including students with dyscalculia. We provide math instruction for grades K-12."
+  },
+  {
+    "subject": "Accent Reduction",
+    "description": "In accent reduction sessions, we use Orton-Gillingham based methods to teach pronunciation rules and phonemic awareness for achieving a native-sounding American accent. We provide practice exercises specific to your needs and spend time working on your desired skillset. If you wish to obtain an American accent for professional reasons, we can provide specific exericses for words commonly used in your field."
+  },
+  {
+    "subject": "Executive Functioning",
+    "description": "Executive Functioning sessions include Organization, Planning, Persistence, Flexibility, Sustained Attention, Working Memory, Impulse Control, Time Management, and Initiative Skills."
+  },
+  {
+    "subject": "Reading",
+    "description": "Reading Comprehension sessions aim to build understanding of the content read, whether fiction or nonfiction. In a Reading Comprehension session, students will focus on learning and applying active reading strategies to better organize information, as well as decode author's purpose, main idea, theme, and more. Comprehension sessions can be enrolled in as stand-alone classes, or as a follow up to Orton-Gillingham Reading & Spelling instruction."
+  },
+  {
+    "subject": "English Language Arts",
+    "description": "This card has supporting text below as a natural lead-in to additional content."
+  },
+  {
+    "subject": "Phonics",
+    "description": "Orton-Gillingham based Phonological Awareness, Reading and Spelling Instruction"
+  },
+  {
+    "subject": "Coding",
+    "description": "In coding classes, students learn using project-based learning methods to learn real-world applications of each skill taught. Our program begins at the beginning stages of each language and works all the way up to advanced web development, emphasizing strength in the basics for better understanding and stronger foundational skills to build upon when learning advanced concepts."
+  }
+]

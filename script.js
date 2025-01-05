@@ -45,10 +45,11 @@ window.addEventListener("hashchange", async (ev) => {
   let name = location.hash.substring(1).replaceAll("+", " ").replaceAll("%2B", "+");
   if (name.startsWith('/')) name = name.substring(1);
 
-  const content = document.getElementById('content');
-
   const tempDiv = document.createElement('div');
   tempDiv.innerHTML = await (await fetch(`content/${name ? name : "home"}.html`)).text();
+
+  const content = document.getElementById('content');
+  content.innerHTML = "";
 
   // Append the parsed HTML elements one by one
   Array.from(tempDiv.childNodes).forEach(node => {
