@@ -29,6 +29,17 @@ img.card-img-top {
   transform: rotate(180deg);
 }
 
+div.card-image {
+  background-color: #007E8D;
+  /* background-color: #4C91F0; */
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+div.card-image img {
+  margin: 20px;
+}
+
 .content.container {
   margin-top: 20px;
 }

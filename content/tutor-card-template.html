@@ -1,0 +1,32 @@
+<div class="col-md-6 tutor mb-4">
+  <div class="card">
+    <div class="col-md-12 card-image">
+      <img src="${profile-image}" class="img-fluid mx-auto d-block" style="border-radius: 50%; display: block;">
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card-display text-center name">
+            ${name}
+          </div>
+          <div class="description text-center" style="font-size: 20px;">${description}</div>
+          <div class="text-center"><a class="btn btn-primary text-center" href="${link}">View Tutor Profile</a></div>
+          <hr>
+          <h5>Subjects</h5>
+          <ul class="subjects">
+            ${subjects}
+          </ul>
+
+          <div class="collapse" id="collapseA">
+            <h5>About Me</h5>
+            <p class="card-text about-me">${about-me}</p>
+          </div>
+          <a data-toggle="collapse" href="#collapseA" role="button" aria-expanded="false"
+            aria-controls="collapseExample" id="toggle-ashley">
+            Read more
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

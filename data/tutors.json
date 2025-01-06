@@ -1,0 +1,47 @@
+[
+  {
+    "profile-image": "img/tutor-ashley1.png",
+    "name": "Ashley C.",
+    "description": "Experienced in Orton-Gillingham Tutoring, Accent Reduction, Coding, English, and Math",
+    "link": "/#/tutors/ashley",
+    "subjects": [
+      "Orton-Gillingham / Reading for Students with Dyslexia",
+      "ESL / Accent Reduction",
+      "Math: Elementary Math, Pre-Algebra, Algebra I, Algebra II, Geometry",
+      "SAT Prep: Reading and Writing",
+      "Executive Functioning"
+    ]
+  },
+  {
+    "profile-image": "/img/tutor-christine.jpg",
+    "name": "Christine C.",
+    "description": "Experienced in Orton-Gillingham Tutoring, ESL / Accent Reduction, and Executive Functioning",
+    "link": "/#/tutors/christine",
+    "subjects": [
+      "Orton-Gillingham / Reading for Students with Dyslexia",
+      "ESL / Accent Reduction",
+      "Executive Functioning"
+    ]
+  },
+  {
+    "profile-image": "img/Murray Puppy Reindeer.png",
+    "name": "Zoe C.",
+    "description": "Experienced in Tutoring Students with Dyslexia, Orton-Gillingham, and Elementary Math",
+    "link": "/#/tutors/zoe",
+    "subjects": [
+      "Orton-Gillingham / Reading for Students with Dyslexia",
+      "Elementary Math"
+    ]
+  },
+  {
+    "profile-image": "img/tutor-gabi.jpg",
+    "name": "Gabi C.",
+    "description": "Experienced in Orton-Gillingham Tutoring, English Grammar Usage, and ESL / Accent Reduction",
+    "link": "/#/tutors/gabi",
+    "subjects": [
+      "Orton-Gillingham / Reading for Students with Dyslexia",
+      "English Grammar",
+      "ESL / Accent Reduction"
+    ]
+  }
+]
