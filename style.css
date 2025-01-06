@@ -19,6 +19,11 @@ body {
   font-size: 1.1rem;
 }
 
+.navbar-nav .nav-item a.sign-up {
+  color: white;
+  border-color: white;
+}
+
 .navbar-brand div {
   display: inline-flex;
   vertical-align: middle;
