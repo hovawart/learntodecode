@@ -6,23 +6,46 @@ body {
   display: none;
 }
 
+#navbar.active nav {
+  background-color: white;
+}
+
+.navbar-brand img {
+  width: 180px;
+}
+
+.navbar-nav .nav-item a {
+  color: #333333;
+  font-size: 1.1rem;
+}
+
+.navbar-brand div {
+  display: inline-flex;
+  vertical-align: middle;
+  color: whitesmoke;
+}
+
+img.card-img-top {
+  transform: rotate(180deg);
+}
+
+.content.container {
+  margin-top: 20px;
+}
+
 .nav-item {
   margin-left: 20px;
 }
 
 .homepage-jumbotron-index {
-  background-image: url("img/ltd-bg-4.jpg") !important;
+  background-image: url("img/ltd-bg-4-transparent-full.png") !important;
 }
 
 .homepage-jumbotron {
-  margin-top: 40px !important;
-  background-image: url("img/ltd-bg-4.jpg");
+  background-image: url("img/ltd-bg-4-transparent-full.png");
   background-position: top center;
   background-size: cover;
-  margin-top: 20px;
   color: rgb(75, 75, 75) !important;
-  /*  color: #0a7e8e !important;*/
-  /*  height: 50%;*/
 }
 
 .card-body {
@@ -31,8 +54,7 @@ body {
 
 .navbar-brand {
   font-family: "Times New Roman", Times, serif;
-  font-style: italic;
-  font-size: 1.26rem;
+  font-size: 1.2rem;
 }
 
 .nav-link {
@@ -120,8 +142,8 @@ body {
   font-family: "Times New Roman", times, serif;
 }
 
-.display-5 {
-  font-size: 3rem;
+.display-6 {
+  font-size: 2.5rem;
 }
 
 .info-list {
@@ -197,4 +219,5 @@ body {
 
 .jumbotron {
   margin-bottom: 0px !important;
+  background-color: unset;
 }

@@ -1,0 +1,142 @@
+<div class="container content">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="display-5">Writing Skills</h1>
+      <p>
+        In writing sessions, students will learn methods for brainstorming and organizing ideas for fiction or
+        nonfiction writing. Students study model articles and are walked through the writing process to craft a strong
+        essay, article, or narrative. We put a big emphasis on basic skills, so writing lessons can be paired with
+        language arts or grammar instruction in order to create a strong writing skillset.
+      </p>
+      <hr />
+      <h1 class="display-5">Writing Tutors</h1>
+      <div class="container all-tutors" id="tutors" style="margin-bottom: 100px;">
+
+        <!--Ashley-->
+        <div class="row tutors">
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-3"></div>
+                  <div class="col-md-6">
+                    <img src="img/tutor-ashley1.png" class="img-fluid mx-auto d-block"
+                      style="border-radius: 50%; display: block;">
+                  </div>
+                  <div class="col-md-3"></div>
+                  <div class="col-md-12">
+                    <div class="card-display text-center" style="margin-top: 10px; margin-left: 0; font-size: 20px;">
+                      Ashley C.<div style="font-size: 16px; font-style: italic;">Experience here</div>
+                      <a href="tutor-ashley.html">
+                        <div class="btn btn-primary mt-2">View Tutor Profile</div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Christine-->
+          <!-- <div class="col-md-3">
+							<div class="card">
+								<div class="card-body">
+									<div class="row">
+										<div class="col-md-3"></div>
+										<div class="col-md-6">
+											<img src="img/tutor-christine.jpg" class="img-fluid mx-auto d-block" style="border-radius: 50%; display: block;">
+										</div>
+										<div class="col-md-3"></div>
+										<div class="col-md-12">
+											<div class="card-display text-center" style="margin-top: 10px; margin-left: 0; font-size: 20px;">Christine C.<div style="font-size: 16px; font-style: italic;">Experience here</div>
+											<div class="btn btn-primary mt-2">View Tutor Profile</div>
+										</div>
+									</div>				    
+								</div>
+							</div>
+						</div>
+					</div> -->
+
+          <!--Zoe-->
+          <!-- <div class="col-md-3">
+							<div class="card">
+							  <div class="card-body">
+							  	<div class="row">
+							  		<div class="col-md-3"></div>
+							  		<div class="col-md-6">
+							  			<img src="img/tutor-murray.png" class="img-fluid mx-auto d-block" style="border-radius: 50%; display: block;">
+							  		</div>
+							  		<div class="col-md-3"></div>
+							  		<div class="col-md-12">
+							  			<div class="card-display text-center" style="margin-top: 10px; margin-left: 0; font-size: 20px;">Zoe C.<div style="font-size: 16px; font-style: italic;">Experience here</div>
+							  			<div class="btn btn-primary mt-2">View Tutor Profile</div>
+							  			</div>
+							  	</div>				    
+							  </div>
+							</div>
+						</div> -->
+          <!-- </div> -->
+
+          <!--Gabi-->
+          <!-- <div class="col-md-3">
+							<div class="card">
+								<div class="card-body">
+									<div class="row">
+										<div class="col-md-3"></div>
+										<div class="col-md-6">
+											<img src="img/tutor-gabi.jpg" class="img-fluid mx-auto d-block" style="border-radius: 50%; display: block;">
+										</div>
+										<div class="col-md-3"></div>
+										<div class="col-md-12">
+											<div class="card-display text-center" style="margin-top: 10px; margin-left: 0; font-size: 20px;">Gabi C.<div style="font-size: 16px; font-style: italic;">Experience here</div>
+											<span data-toggle="tooltip" data-placement="bottom" title="Not taking new students at this time" style="cursor: not-allowed;"><div class="btn btn-primary disabled mt-2">View Tutor Profile</div></span>
+										</div>				    
+									</div>
+								</div>
+							</div>
+						</div> -->
+          <!-- </div> -->
+        </div>
+        <hr />
+        <h1 class="display-5">Resources</h1>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header pt-4">
+                <p class="lead text-center">Information</p>
+              </div>
+              <div class="card-body">
+                <ul class="info-list">
+                  <a href="#">
+                    <li>Scope and Sequence</li>
+                  </a>
+                  <a href="#">
+                    <li>FAQs</li>
+                  </a>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header pt-4">
+                <p class="lead text-center">Supplementary Materials</p>
+              </div>
+              <div class="card-body">
+                <ul class="info-list">
+                  <a href="#">
+                    <li>Writing Exercises and Activities</li>
+                  </a>
+                  <a href="#">
+                    <li>Writing Prompts</li>
+                  </a>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

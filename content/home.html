@@ -81,7 +81,6 @@
   </div>
 </div>
 <script>
-  console.log("hello");
   (async () => {
     const template = await (await fetch('content/subject-card-template.html')).text();
     const data = JSON.parse(await (await fetch('data/subjects.json')).text());
@@ -89,9 +88,12 @@
     let html = "";
     for (let i = 0; i < data.length; i++) {
       const item = data[i];
+      const link = item.link ? item.link : "/#/";
+
       html += template
         .replaceAll("${subject}", item.subject)
-        .replaceAll("${description}", item.description);
+        .replaceAll("${description}", item.description)
+        .replaceAll("${link}", link);
     }
     const deck = document.getElementById("card-deck1");
     deck.innerHTML = html;
