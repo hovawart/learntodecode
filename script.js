@@ -59,11 +59,12 @@ function passcode() {
 
 document.addEventListener("input", function(ev) {
   console.log(ev);
+  // ev.target.innerHTML = ev.target.innerHTML.replaceAll("<div>", "<br>").replaceAll("</div>", "");
 });
 
 document.addEventListener("focusout", function(ev) {
   console.log(ev);
-  ev.target.innerHTML = ev.target.innerHTML.replaceAll("<div>", "<br>").replaceAll("</div>", "");
+  // ev.target.innerHTML = ev.target.innerHTML.replaceAll("<div>", "<br>").replaceAll("</div>", "");
 });
 
 window.addEventListener("hashchange", async (ev) => {
