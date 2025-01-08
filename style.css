@@ -246,3 +246,10 @@ div.card-image img {
   white-space: pre-wrap;
   display: inline-block;
 }
+
+.content-title {
+  width: 100%;
+  text-align: left;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
