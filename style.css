@@ -253,3 +253,7 @@ div.card-image img {
   font-size: 3rem;
   margin-bottom: 20px;
 }
+
+.card-title {
+  font-weight: bold;
+}
