@@ -44,9 +44,27 @@ function passcode() {
       content.appendChild(node);
     }
   });
-  const titleElement = document.querySelector(".meta-data.title");
-  document.getElementById("title").innerHTML = titleElement ? titleElement.innerHTML : "Not Found";
+
+  setTimeout(() => {
+    document.querySelectorAll(".editable").forEach(node => {
+      console.log(node);
+      node.setAttribute("contenteditable", "");
+    });
+  }, 100);
+
+  // const titleElement = document.querySelector(".meta-data.title");
+  // document.getElementById("title").innerHTML = titleElement ? titleElement.innerHTML : "Not Found";
 })();
+
+
+document.addEventListener("input", function(ev) {
+  console.log(ev);
+});
+
+document.addEventListener("focusout", function(ev) {
+  console.log(ev);
+  ev.target.innerHTML = ev.target.innerHTML.replaceAll("<div>", "<br>").replaceAll("</div>", "");
+});
 
 window.addEventListener("hashchange", async (ev) => {
   let name = location.hash.substring(1).replaceAll("+", " ").replaceAll("%2B", "+");
@@ -78,8 +96,8 @@ window.addEventListener("hashchange", async (ev) => {
     }
   });
 
-  const titleElement = document.querySelector(".meta-data.title");
-  document.getElementById("title").innerHTML = titleElement ? titleElement.innerHTML : "Not Found";
+  // const titleElement = document.querySelector(".meta-data.title");
+  // document.getElementById("title").innerHTML = titleElement ? titleElement.innerHTML : "Not Found";
 });
 
 $(window).on("scroll", function () {

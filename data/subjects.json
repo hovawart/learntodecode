@@ -30,8 +30,18 @@
     "link": "/#/subjects/reading"
   },
   {
+    "subject": "Writing",
+    "description": "In writing sessions, students will learn methods for brainstorming and organizing ideas for fiction or nonfiction writing. Students study model articles and are walked through the writing process to craft a strong essay, article, or narrative. We put a big emphasis on basic skills, so writing lessons can be paired with language arts or grammar instruction in order to create a strong writing skillset.",
+    "link": "/#/subjects/writing"
+  },
+  {
     "subject": "Grammar",
     "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.",
+    "link": "/#/subjects/grammar"
+  },
+  {
+    "subject": "English",
+    "description": "Combines reading, writing, grammar, and spelling into a single cohesive program using Orton-Gillingham techniques for sensory learning.",
     "link": "/#/subjects/grammar"
   },
   {

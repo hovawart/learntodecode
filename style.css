@@ -35,7 +35,7 @@ img.card-img-top {
 }
 
 div.card-image {
-  background-color: #007E8D;
+  background-color: whitesmoke;
   /* background-color: #4C91F0; */
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
@@ -236,4 +236,13 @@ div.card-image img {
 .jumbotron {
   margin-bottom: 0px !important;
   background-color: unset;
+}
+
+[contenteditable]:focus {
+  outline: 0px solid transparent;
+}
+
+.editable {
+  white-space: pre-wrap;
+  /* display: inline-block; */
 }
