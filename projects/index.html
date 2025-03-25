@@ -119,14 +119,14 @@
           <a class="nav-link" onclick="passcode()">Resources</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="/projects/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Projects
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/projects/calc/">Calculator Project</a></li>
             <li><a class="dropdown-item" href="/projects/traffic/">Traffic Project</a></li>
           </ul>
-        </li>        
+        </li>
       </ul>
     </div>
   </nav>
@@ -138,7 +138,7 @@
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <h1>Calculator Project</h1>
+              <h1><a href="/projects/calc/">Calculator Project</a></h1>
 
               <div class="key-concepts">
                 <h2>Project Goals</h2>
@@ -160,12 +160,38 @@
                 <li>Create a <code>fillButtons()</code> function</li>
                 <li>Use a for-loop to set button inner HTML</li>
                 <li>Call the <code>fillButtons()</code> function</li>
-            </ol>
+            </ol>            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <h1><a href="/projects/traffic/">Traffic Simulator Project</a></h1>
+
+            <div class="key-concepts">
+              <h2>Project Goals</h2>
+              <p>Create intelligent traffic light control algorithms that optimize traffic flow at a simulated intersection.</p>
+              
+              <h2>Learning Objectives</h2>
+              <ul>
+                <li>Work with custom JavaScript events</li>
+                <li>Use conditional (if/else) statements</li>
+                <li>Process real-time data to make automated decisions</li>
+                <li>Optimize algorithms based on multiple factors</li>
+              </ul>
+            </div>
+            
+            <h2>Project Steps</h2>
+            <ol>
+              <li>Create an event listener for the <code>trafficStatsChange</code> event</li>
+              <li>Access traffic data from the event object</li>
+              <li>Write conditional logic using if statements</li>
+              <li>Implement progressively smarter signal control algorithms</li>
+              <li>Test and refine your solution for optimal traffic flow</li>
+            </ol>            
           </div>
         </div>
       </div>
     </div>
   </div>
 </body>
-
 </html>
