@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="../../style.css">
+
+  <style>
+    .card-group-bg {
+      /* background-color: #edf5f7; */
+      width: 100%;
+      padding: 20px;
+    }
+  </style>
+
+  <style>
+    body {
+      /* overflow: hidden; */
+    }
+
+    #main {
+      /* height: calc(100vh - 56px); */
+      margin-top: 80px;
+      margin-bottom: 500px;
+    }
+
+    #main .contents {
+      height: 100%;
+    }
+
+    #main #preview-iframe {
+      height: 100%;
+      border: none;
+    }
+
+    .editor {
+      width: 100%;
+      height: 400px;
+      resize: none;
+      border: none;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+
+    .editors {}
+
+    .preview {
+      background-color: #ffffff;
+      height: 100%;
+      position: fixed;
+      right: 0px;
+    }
+
+    #preview {
+      height: 100%;
+    }
+
+    .btn.action {
+      width: 100px;
+    }
+
+    #main #solution-code {
+      display: none;
+    }
+
+    #main.show #solution-code {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <nav class="navbar navbar-expand bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Learn to Decode</a>
+    </div>
+  </nav> -->
+  <nav class="navbar navbar-expand-sm  navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#">Learn to Decode</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  disabled" aria-disabled="true" href="/about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true" href="/contact.html">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" onclick="passcode()">Resources</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/projects/#calc">Projects</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="main" class="fluid-container edit-and-preview">
+
+    <div class="row contents">
+      <div class="col-6 editors">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h1>Calculator Project</h1>
+              <p>Given the following HTML and CSS that creates the calculator to the right, add script to populate the
+                buttons.</p>
+              <h2>The HTML</h2>
+              <p>This HTML creates the layout for buttons in 4 rows of 4 buttons. There is some script below the HTML to
+                handle the button actions.</p>
+              <div id="html" class="editor mb-3"></div>
+              <h2>The CSS</h2>
+              <p>The CSS below places the display and buttons horizontally across the calculator. The white buttons are
+                intended to be for digits. The light-blue buttons are intended to be for the operations, addition,
+                subtraction, multiplication, and division. Clear and equals round out the light-blue buttons.</p>
+              <p>The button array starts at the top-left and runs from left to right for each row. For the first row,
+                there are 3 digits, then 1 operator. Same for the second and third rows. For the fourth row, there is 1
+                operator, 1 digit, then 2 more operators.</p>
+              <div id="css" class="editor mb-3"></div>
+              <h2>The Code</h2>
+              <h3>Arrays</h3>
+              <p>Since JavaScript arrays are zero-based, the button indexes are numbered 0 through 15.</p>
+              <p>Here is an example array for each character that represents each of the 16 buttons:</p>
+              <pre>
+const buttonTexts = ["1", "2", "3", "+", "4", "5", "6", "-", "7", "8", "9", "*", "C", "0", "=", "/"];
+              </pre>
+              <p>Another way to write this array will make it more obvious how the buttons are intended to be arranged:
+              </p>
+              <pre>
+const buttonTexts = [ "1", "2", "3", "+",
+                      "4", "5", "6", "-",
+                      "7", "8", "9", "*",
+                      "C", "0", "=", "/" ];
+              </pre>
+              <h3>Buttons</h3>
+              <p>The buttons themselves are represented by HTML div elements. An array of the buttons can be retrieved
+                with this code:</p>
+              <pre>
+const buttons = document.querySelectorAll(".button");
+              </pre>
+              <p>Like the array for the buttonTexts above, the button array has 16 elements indexed 0 through 15.</p>
+              <h3>For Loops</h3>
+              <p>Using a for-loop, we can loop through the buttons to set their text to the cooresponding character in
+                the buttonTexts array. Here is an example:</p>
+              <pre>
+for (let i = 0; i < buttons.length; i++) {
+  const button = buttons[i];
+}
+              </pre>
+              <p>We can use that same loop to retrieve each buttonText as well:</p>
+              <pre>
+for (let i = 0; i < buttons.length; i++) {
+  const button = buttons[i];
+  const buttonText = buttonTexts[i];
+}
+</pre>
+              <p>Putting it all together, we can set the button text with the buttonText character like so:</p>
+              <pre>
+for (let i = 0; i < buttons.length; i++) {
+  const button = buttons[i];
+  const buttonText = buttonTexts[i];
+  buttonText.innerHTML = buttonText;
+}
+</pre>
+              <h3>Functions</h3>
+              <p>Functions are written with the following structure,</p>
+              <pre>
+function myfunction() {
+  // some code here:
+  console.log("hello");
+}
+</pre>
+              <p>The example function above is referred to as a "no-args" function.</p>
+              <p>Functions can optionally have 1 or more arguments that are variables avaiable to the function,</p>
+              <pre>
+function myfunction(message, name) {
+  console.log(message + " " + name);
+}
+</pre>
+              <p>Functions are called by their name and arguments,</p>
+              <pre>
+  myfunction("hello", "bob");
+</pre>
+              <p>This function call results in "hello bob" being printed to the console window.</p>
+              <p>Function can also return a value,</p>
+              <pre>
+function myfunction(message, name) {
+  return message + " " + name;
+}
+</pre>
+              <p>Calling this function will also result in "hello bob" being printed to the console, but using the
+                return value instead,</p>
+              <pre>
+const value = myfunction("hello", "bob");
+console.log(value);
+</pre>
+              <h2>Putting it all together</h2>
+              <p>In the editor below, create a function to populate the buttons, between the script tags, with digits 0
+                through 9 as well as the operation buttons for +, -, *, /, C, and =, using the following steps:</p>
+              <ol>
+                <li>Declare a variable named "buttonTexts" that contains the text for each button</li>
+                <li>Declare a variable named "buttons" that contains the buttons divs</li>
+                <li>Create a function named "fillButtons" that is a no-args function</li>
+                <li>Inside of the "fillButtons" function, use a for-loop to set the button text for each button</li>
+                <li>Call the "fillButtons" function</li>
+                <li>Click the "Run" button when your code is ready</li>
+                <li>Your calculator should now be functional</li>
+              </ol>
+              <div id="script" class="editor mb-3"></div>
+              <button class="btn action btn-primary form-control" id="run">Run</button>
+              <button class="btn action btn-warning form-control" id="solution">Solution</button>
+
+              <div id="solution-code">
+                <h2>The Solution</h2>
+                <pre>
+const buttonTexts = [ "1", "2", "3", "+",
+                      "4", "5", "6", "-",
+                      "7", "8", "9", "*",
+                      "C", "0", "=", "/" ];
+
+const buttons = document.querySelectorAll(".button");
+
+function fillButtons() {
+  for (let i = 0; i < buttons.length; i++) {
+    const button = buttons[i];
+    const buttonText = buttonTexts[i];
+    button.innerHTML = buttonText;
+  }
+}
+
+fillButtons();
+</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 preview">
+        <div id="preview" class="col-12 g-0 mt-4">
+          <iframe id="preview-iframe"></iframe>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.27.0/min/vs/loader.js"></script>
+  <script>
+    let updatePreview;
+    let contenteditable = "";
+
+    let run = (values) => {
+      require.config({
+        paths: { vs: "https://cdn.jsdelivr.net/npm/monaco-editor@0.27.0/min/vs",
+                 espree: "https://cdn.jsdelivr.net/npm/espree@10.3.0/espree.js",
+                 esprima: "https://unpkg.com/esprima@~4.0/dist/esprima.js"
+         }
+      });
+      require(["vs/editor/editor.main"], function () {
+
+        monaco.editor.defineTheme('default', {
+          base: 'vs-dark',
+          inherit: true,
+          rules: [
+            {
+              token: "identifier",
+              foreground: "9CDCFE"
+            },
+            {
+              token: "identifier.function",
+              foreground: "DCDCAA"
+            },
+            {
+              token: "type",
+              foreground: "1AAFB0"
+            }
+          ],
+          colors: {}
+        });
+        monaco.editor.setTheme('default')
+
+        var htmlEditor = monaco.editor.create(document.getElementById("html"), {
+          value: values.html,
+          language: "html",
+          automaticLayout: true
+        });
+        htmlEditor.updateOptions({ wordWrap: "on", tabSize: 2 });
+        var cssEditor = monaco.editor.create(document.getElementById("css"), {
+          value: values.css,
+          language: "css",
+          automaticLayout: true
+        });
+        var scriptEditor = monaco.editor.create(document.getElementById("script"), {
+          value: values.script,
+          language: "html",
+          automaticLayout: true
+        });
+
+        document.getElementById("main").editors = {
+          html: htmlEditor,
+          css: cssEditor,
+          script: scriptEditor
+        }
+
+        const src = `<!DOCTYPE=html>
+<html lang="en">
+  <head>
+    <title>Learn to Decode</title>
+    <style>
+      \${style}
+    </style>
+  </head>
+  <body \${contenteditable}>
+    <div id="content">
+      \${body}
+    </div>
+    \${script}
+  </body>
+</html>`;
+        updatePreview = function (event) {
+          let template = src;
+          template = template.replace("${contenteditable}", contenteditable);
+          template = template.replace("${body}", htmlEditor.getValue());
+          let inputs = document.querySelectorAll("#copyright-form input");
+          for (var i = 0; i < inputs.length; i++) {
+            let input = inputs[i];
+            if (input.value.trim() === "") {
+              continue;
+            }
+            let slug = input.getAttribute("data-slug");
+            template = template.replace(slug, input.value);
+          }
+          template = template.replace("${style}", cssEditor.getValue());
+          let pageInputs = document.querySelectorAll("#page-form input");
+          for (var i = 0; i < pageInputs.length; i++) {
+            let input = pageInputs[i];
+            if (input.value.trim() === "") {
+              continue;
+            }
+            let slug = input.getAttribute("data-slug");
+            template = template.replace(slug, input.value);
+          }
+
+          template = template.replace("${script}", scriptEditor.getValue());
+
+          document.getElementById("preview-iframe").srcdoc = template;
+        }
+
+        const page = values.page;
+        const keys = Object.keys(page);
+        for (let i = 0; i < keys.length; i++) {
+          let key = keys[i];
+          let item = page[key];
+          if (typeof item === 'string') {
+            continue;
+          }
+          let fields = Object.keys(item);
+          for (let j = 0; j < fields.length; j++) {
+            let field = fields[j];
+            let value = item[field];
+            let selector = `#${key}-form #${field}`;
+            document.querySelector(selector).value = value;
+          }
+        }
+
+        htmlEditor.onDidChangeModelContent(e => {
+          // updatePreview(e);
+        });
+        cssEditor.onDidChangeModelContent(e => {
+          // updatePreview(e);
+        });
+        scriptEditor.onDidChangeModelContent(e => {
+          // updatePreview(e);
+        });
+        document.getElementById("run").addEventListener("click", (ev) => {
+          updatePreview();
+        });
+        document.getElementById("solution").addEventListener("click", (ev) => {
+          const main = document.getElementById("main");
+          main.classList.contains("show") ? main.classList.remove("show") : main.classList.add("show");
+        });
+
+        updatePreview();
+      });
+    };
+  </script>
+
+  <script>
+    (async function () {
+
+      const getContent = async function (path) {
+        const folder = window.location.hash.slice(1);
+        const response = await fetch(path);
+        const content = await response.text();
+        return content;
+      }
+
+      const json = await getContent("page.json");
+      const page = JSON.parse(json);
+
+      document.title = page.title;
+
+      const html = await getContent("content.txt");
+      const style = await getContent("style.css");
+      const script = await getContent("script.html");
+
+      const doc = {
+        page: page,
+        html: html,
+        css: style,
+        script: script
+      }
+      run(doc);
+    })();
+  </script>
+
+
+</body>
+
+</html>

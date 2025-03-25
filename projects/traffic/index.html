@@ -120,7 +120,139 @@
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <h1>Traffic Simulator</h1>
+              <h3 class="mt-4">Traffic Simulator: Smart Signal Control Tutorial</h3>
+
+              <p class="lead">
+                This interactive tutorial teaches students how to create intelligent traffic light control systems using JavaScript.
+                By harnessing real-time data from a traffic simulation, students learn to write algorithms that optimize traffic flow at an intersection.
+              </p>
+                    
+              <h4>What You'll Learn</h4>
+              <ul>
+                <li>How to listen for custom events in JavaScript</li>
+                <li>How to access and interpret real-time traffic statistics</li>
+                <li>How to use conditional logic to make automated decisions</li>
+                <li>How to optimize traffic signals based on multiple factors</li>
+              </ul>
+                    
+              <h4>Key Concepts</h4>
+              <p>
+                The tutorial introduces the <code>trafficStatsChange</code> event that provides live data about traffic conditions, including:
+              </p>
+              <ul>
+                <li>Wait times for vehicles</li>
+                <li>Number of stopped cars</li>
+                <li>Traffic throughput and efficiency metrics</li>
+                <li>Time since traffic signals last changed</li>
+              </ul>
+                    
+              <p>
+                Students implement progressively more sophisticated control algorithms:
+              </p>
+              <ol>
+                <li>Simple timed signal changes</li>
+                <li>Traffic volume-based control</li>
+                <li>Wait time optimization</li>
+                <li>Multi-factor "pressure score" systems</li>
+              </ol>
+                    
+              <h4>Interactive Environment</h4>
+              <p>
+                The split-screen layout provides:
+              </p>
+              <ul>
+                <li>A code editor where students write JavaScript to control traffic signals</li>
+                <li>A live traffic simulation showing the effects of their algorithms</li>
+                <li>Real-time statistics to evaluate their solution's effectiveness</li>
+              </ul>
+                    
+              <p class="alert alert-info">
+                This project offers a practical application of programming concepts in a relatable real-world scenario that 
+                students can visualize and optimize through experimentation.
+              </p>
+
+              <h4>Using the trafficStatsChange Event</h4>
+          
+              <p>The traffic simulator provides real-time statistics through a custom event called <code>trafficStatsChange</code>. 
+                 You can use this event to create smart traffic light controllers that respond to changing traffic conditions!</p>
+              
+              <h5>Step 1: Create an Event Listener</h5>
+              <p>First, you need to set up a listener that will run your code whenever new traffic data becomes available. 
+                 The event listener connects to the simulation container and gives you access to real-time traffic statistics.</p>
+              <pre class="bg-light p-3"><code>document.getElementById('simulation-container').addEventListener('trafficStatsChange', function(event) {
+  // Your traffic control logic goes here
+  const stats = event.detail;
+  
+  // Example: Log the current stats to see what's happening
+  console.log(stats);
+});</code></pre>
+              
+              <h5>Step 2: Access Traffic Statistics</h5>
+              <p>The <code>event.detail</code> object contains all the data you need about the current traffic situation. Each field provides specific information that you can use to make intelligent decisions about when to change the traffic lights.</p>
+                            
+              <table class="table table-bordered">
+                <thead class="thead-light">
+                  <tr>
+                    <th>Field Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td><code>'Time since last signal change'</code></td><td>Seconds since traffic lights changed - use this to prevent lights from changing too frequently</td></tr>
+                  <tr><td><code>'Time since first car stopped'</code></td><td>Seconds since the first car stopped - helps identify long waits at red lights</td></tr>
+                  <tr><td><code>'Number of cars stopped'</code></td><td>Current count of stopped cars - indicates congestion at red lights</td></tr>
+                  <tr><td><code>'Total cars passed'</code></td><td>Total cars that passed through - measures overall throughput of your system</td></tr>
+                  <tr><td><code>'Total cars approached'</code></td><td>Total cars that approached - shows total traffic volume handled</td></tr>
+                  <tr><td><code>'Avg cars per minute'</code></td><td>Average throughput rate - indicates efficiency of your signal timing</td></tr>
+                  <tr><td><code>'Avg approaches per minute'</code></td><td>Average approach rate - shows traffic demand over time</td></tr>
+                  <tr><td><code>'Avg wait time (sec)'</code></td><td>Average wait time per car - key measure of driver experience</td></tr>
+                </tbody>
+              </table>
+              
+              <h5>Step 3: Create Logic to Control Signals</h5>
+              <p>Now comes the fun part! You can write conditional statements (if statements) that decide when to change the traffic lights based on the statistics you're receiving. The goal is to create a system that keeps traffic flowing efficiently.</p>
+                            
+              <div class="alert alert-info">
+                <strong>Tip:</strong> Use <code>document.getElementById('toggleLights').click()</code> to change traffic lights. This simulates clicking the button that controls the signals.
+              </div>
+              
+              <h6>Example: Change Lights After Set Time</h6>
+              <p>This simple approach changes lights on a fixed schedule, similar to traditional traffic lights:</p>
+              <pre class="bg-light p-3"><code>// Change lights every 30 seconds
+if (stats['Time since last signal change'] >= 30) {
+  document.getElementById('toggleLights').click();
+}</code></pre>
+              
+              <h6>Example: Change Based on Traffic Volume</h6>
+              <p>This smarter approach responds to the number of cars waiting at red lights, but still ensures a minimum green time:</p>
+              <pre class="bg-light p-3"><code>// Change lights when more than 5 cars are waiting
+if (stats['Number of cars stopped'] > 5 && stats['Time since last signal change'] >= 15) {
+  document.getElementById('toggleLights').click();
+}</code></pre>
+              
+              <h6>Example: Change Based on Wait Time</h6>
+              <p>This approach focuses on driver experience by monitoring the average wait time:</p>
+              <pre class="bg-light p-3"><code>// Change when average wait time is too high
+if (stats['Avg wait time (sec)'] > 20 && stats['Time since last signal change'] >= 10) {
+  document.getElementById('toggleLights').click();
+}</code></pre>
+              
+              <h5>Challenge: Smart Traffic Control</h5>
+              <p>Create a traffic control algorithm that balances wait times and throughput by considering multiple factors at once. 
+                 This more advanced approach uses a scoring system to weigh different aspects of the traffic situation:</p>
+              <pre class="bg-light p-3"><code>// Calculate a "pressure score" based on multiple factors
+const waitScore = stats['Number of cars stopped'] * 2;   // More weight for stopped cars
+const timeScore = stats['Avg wait time (sec)'] * 1.5;    // Some weight for waiting time
+const totalScore = waitScore + timeScore;
+
+// Change lights if pressure exceeds threshold and minimum time has passed
+if (totalScore > 25 && stats['Time since last signal change'] >= 10) {
+  console.log(`Changing lights: Score=${totalScore.toFixed(1)}`);
+  document.getElementById('toggleLights').click();
+}</code></pre>
+              
+              <p>Try modifying these examples to create your own traffic control system! What factors do you think are most important? Can you create an algorithm that outperforms standard timed lights?</p>
+
               <div id="script" class="editor mb-3"></div>
               <button class="btn action btn-primary form-control" id="run">Run</button>
             </div>
@@ -213,7 +345,7 @@
           }
           template = template.replace("${style}", values.style);
           let pageInputs = document.querySelectorAll("#page-form input");
-          for (var i = 0; i < pageInputs.length; i++) {
+          for (let i = 0; i < pageInputs.length; i++) {
             let input = pageInputs[i];
             if (input.value.trim() === "") {
               continue;
