@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Intersection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="simulation-container" class="container">
+        <h1>Traffic Intersection Simulation</h1>
+        <div class="intersection-container">
+            <svg id="intersection" width="800" height="600"></svg>
+        </div>
+        <div class="controls">
+            <button id="toggleLights">Toggle Traffic Lights</button>
+            <button id="toggleTraffic">Toggle Traffic Flow</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+      window.addEventListener('load', function () {
+        document.getElementById("toggleTraffic").click();
+      });
+    </script>
+</body>
+</html>

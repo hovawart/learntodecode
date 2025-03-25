@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 8px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .intersection-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  
+  .controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  /* SVG Styles */
+  .road {
+    fill: #555;
+  }
+  
+  .road-marking {
+    stroke: #fff;
+    stroke-width: 2;
+    stroke-dasharray: 10, 10;
+  }
+  
+  .road-marking-solid {
+    stroke: #fff;
+    stroke-width: 2;
+  }
+  
+  .grass {
+    fill: #7cba6b;
+  }
+  
+  .sidewalk {
+    fill: #ccc;
+  }
+  
+  .traffic-light {
+    stroke: #333;
+    stroke-width: 1;
+  }
+  
+  /* Traffic light colors are set dynamically via JavaScript */
+  .traffic-light-red, .traffic-light-yellow, .traffic-light-green {
+    transition: fill 0.3s ease;
+  }
+  
+  .car {
+    transition: transform 0.5s linear;
+  }
+  
+  .car-indicator {
+    stroke: #333;
+    stroke-width: 1;
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.7));
+  }
+  

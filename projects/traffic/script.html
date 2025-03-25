@@ -1,0 +1,17 @@
+<script>
+  document.getElementById('simulation-container').addEventListener('trafficStatsChange', function(event) {
+      const statsData = event.detail;
+      console.log('Stats updated:', statsData);
+
+      if (statsData["Time since last signal change"] < 10) {
+          return;
+      }
+      if (statsData["Number of cars stopped"] >= 12) {
+          document.getElementById('toggleLights').click();
+      } else if (statsData["Time since first car stopped"] >= 60) {
+          document.getElementById('toggleLights').click();
+      } else if (statsData["Time since last signal change"] >= 60) {
+          document.getElementById('toggleLights').click();
+      }
+  });
+</script>
