@@ -250,9 +250,70 @@ if (totalScore > 25 && stats['Time since last signal change'] >= 10) {
   console.log(`Changing lights: Score=${totalScore.toFixed(1)}`);
   document.getElementById('toggleLights').click();
 }</code></pre>
-              
+
+<h6>Using If/Else Statements for More Advanced Control</h6>
+<p>Sometimes you need to make different decisions based on various conditions. This is where if/else statements become powerful:</p>
+
+<pre class="bg-light p-3"><code>// Basic if/else structure
+if (condition) {
+  // Code that runs when condition is true
+} else {
+  // Code that runs when condition is false
+}
+
+// Example: Different behavior based on traffic direction
+if (stats['Number of cars stopped'] > 8) {
+  // Heavy congestion - change lights immediately
+  document.getElementById('toggleLights').click();
+} else {
+  // Lower congestion - log status but don't change yet
+  console.log("Traffic still flowing well, maintaining current signal");
+}</code></pre>
+
+<h6>Multiple Conditions with Else If</h6>
+<p>For more complex decision trees with multiple options, use else if:</p>
+
+<pre class="bg-light p-3"><code>// Different actions based on congestion level
+if (stats['Number of cars stopped'] > 10) {
+  // Heavy congestion - immediate action
+  console.log("Heavy congestion detected!");
+  document.getElementById('toggleLights').click();
+} else if (stats['Number of cars stopped'] > 5) {
+  // Medium congestion - check wait time before deciding
+  if (stats['Avg wait time (sec)'] > 15) {
+    console.log("Medium congestion with significant wait times");
+    document.getElementById('toggleLights').click();
+  }
+} else {
+  // Light traffic - maintain regular timing
+  if (stats['Time since last signal change'] >= 30) {
+    console.log("Regular signal change on timer");
+    document.getElementById('toggleLights').click();
+  }
+}</code></pre>
+
+<h6>Nested If Statements</h6>
+<p>You can place if statements inside other if statements to create more complex logic:</p>
+
+<pre class="bg-light p-3"><code>// Nested decision example
+if (stats['Time since last signal change'] >= 10) {
+  // Minimum time has passed, now we can consider changing
+  if (stats['Number of cars stopped'] > 3) {
+    // Check if cars have been waiting too long
+    if (stats['Time since first car stopped'] > 20) {
+      console.log("Cars waiting too long - changing lights");
+      document.getElementById('toggleLights').click();
+    }
+  }
+}</code></pre>
+
+<div class="alert alert-warning">
+  <strong>Tip:</strong> While nested if statements are powerful, don't make them too complex! 
+  Too much nesting can make your code hard to understand and maintain.
+</div>
               <p>Try modifying these examples to create your own traffic control system! What factors do you think are most important? Can you create an algorithm that outperforms standard timed lights?</p>
 
+              <h3>Traffic Signal Logic Editor</h3>
               <div id="script" class="editor mb-3"></div>
               <button class="btn action btn-primary form-control" id="run">Run</button>
             </div>
