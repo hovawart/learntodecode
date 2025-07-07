@@ -194,7 +194,12 @@
           );
         } else {
           const body = await response.json();
-          alert("Something went wrong: " + body);
+          if ('Unique constraint violation: email' === body.message) {
+            alert(
+              "Thank you for registering. You have previously registered. Please for an email from learn to decode."
+            );
+          }
+          alert("Something went wrong: " + body.message);
         }
       }
     </script>
