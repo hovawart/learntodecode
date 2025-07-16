@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W4T7VKP72V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-W4T7VKP72V');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+  <title>English Speaking for Russians</title>
+
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+    }    
+  </style>
+  <style>
+    .video-bottom-right {
+      position: fixed;
+      bottom: 0px;
+      right: 0px;
+      width: 480px;
+      margin-bottom: 40px;
+      margin-right: 40px;
+      z-index: 1000;
+    }
+
+    .course-item {
+      margin-top: 2em;
+      color: #555;
+      font-weight: bold;
+    }
+
+    .course-item a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .course-item a:hover {
+      text-decoration: underline;
+    }
+
+    .course-item li {
+      margin-top: 1em;
+      font-weight: normal !important;
+    }
+
+    #lesson-content {
+      margin-bottom: 400px;
+    }
+
+    #x {
+      position: absolute;
+      background: red;
+      top: -13px;
+      right: -13px;
+      z-index: 1000;
+      border-radius: 20px;
+      width: 27px;
+      height: 27px;
+    }
+
+    #x a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    #nav-bar a {
+      color: white;
+    }
+
+    .bg-primary {
+      background-color: #0F0F0F !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top" style="padding-left: 12px;">
+	  <a class="navbar-brand" href="#">Learn to Decode</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	    <ul class="navbar-nav mr-auto">
+	      <li class="nav-item active">
+	        <a class="nav-link" href="/#">Home <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link  disabled" aria-disabled="true" href="/about.html">About</a>
+	      </li>
+		  <li class="nav-item">
+	        <a class="nav-link disabled" aria-disabled="true" href="/contact.html">Contact</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" onclick="passcode()">Resources</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="/projects/">Projects</a>
+	      </li>
+		  <li class="nav-item">
+	        <a class="nav-link" href="/courses/english-speaking-for-russians">English Speaking for Russians</a>
+	      </li>
+		</ul>
+	  </div>
+	</nav>
+  <!-- <nav id="nav-bar" class="navbar navbar-dark bg-primary">
+    <div class="container-fluid">
+      <div>
+        <div class="float-start">
+          <a class="navbar-brand fs-2" href="/"><i class="bi bi-clouds" style="font-size: 2rem; color: white;"></i></a>
+        </div>
+        <div class="float-start ms-2">
+          <a class="navbar-brand fs-2" href="/">Learn to Decode - English Speaking for Russians</a>
+        </div>
+      </div>
+    </div>
+  </nav> -->
+
+  <div class="container-fluid px-4 mt-4" style="padding-top: 50px;">
+    <div class="row gx-5">
+      <div id="lesson-plan-container" class="col-sm-3">
+        <div class="row">
+          <div id="lesson-plan-content" class="col-sm-12 shadow-sm border p-4">
+            <h3>Contents</h3>
+            <nav>
+              <ol id="outline">
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div id="lesson-container" class="col-sm-9">
+        <div class="row">
+          <div id="video-container" class="p-0 pb-4 d-none">
+            <div id="video" class="ratio ratio-16x9 border">
+              <div>
+                <div id="x" class="text-center d-none"><a id="close-video" href="index.html#">x</a></div>
+              </div>
+              <iframe id="youtube" rel="0" width="560" height="315" title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+            <div id="video-spacer" class="ratio ratio-16x9 mb-4 d-none">
+            </div>
+          </div>
+
+          <div id="lesson-content" class="col-sm shadow-sm border p-4">
+            <zero-md id="app" manual-render>
+              <template data-merge="append">
+                <style>
+                  body {
+                    font-family: 'Open Sans', sans-serif;
+                  }
+
+                  :not(pre)>code[class*=language-],
+                  pre[class*=language-] {
+                    background: #222;
+                  }
+
+                  code[class*=language-],
+                  pre[class*=language-] {
+                    color: #ddd;
+                    text-shadow: none;
+                  }
+
+                  .language-css .token.string,
+                  .style .token.string,
+                  .token.entity,
+                  .token.operator,
+                  .token.url {
+                    color: #ddd;
+                    text-shadow: none;
+                    background: none;
+                  }
+
+                  .token.property,
+                  .token.tag,
+                  .token.boolean,
+                  .token.number,
+                  .token.constant,
+                  .token.symbol,
+                  .token.deleted {
+                    color: #f55;
+                  }
+                </style>
+              </template>
+            </zero-md>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <template id="course-item">
+    <li class="course-item">
+      <div class="text"><a id="{{id}}" href="index.html#{{id}}"
+          data-youtube="{{youtube}}">{{title}}</a></div>
+    </li>
+  </template>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+    crossorigin="anonymous"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
+  <script src="js/video-lesson.js"></script>
+  <script>
+    const data = [
+      { "title": "Introduction", "youtube": "https://www.youtube.com/embed/<placeholder>"},
+      { "title": "Introducing Yourself", "youtube": "https://www.youtube.com/embed/<placeholder>"},
+      { "title": "Telling Time and Dates", "youtube": "https://www.youtube.com/embed/<placeholder>"},
+      { "title": "The Weather", "youtube": "https://www.youtube.com/embed/<placeholder>"},
+      { "title": "Family and Friends", "youtube": "https://www.youtube.com/embed/<placeholder>"},
+      { "title": "Basic Needs", "youtube": "https://www.youtube.com/embed/<placeholder>"},
+      { "title": "Describing Everyday Objects", "youtube": "https://www.youtube.com/embed/<placeholder>"},
+      { "title": "Hobbies and Interests", "youtube": "https://www.youtube.com/embed/<placeholder>"},
+      { "title": "Directions", "youtube": "https://www.youtube.com/embed/<placeholder>"},
+      { "title": "Home and Surroundings", "youtube": "https://www.youtube.com/embed/<placeholder>"},
+      { "title": "Nature and Geography", "youtube": "https://www.youtube.com/embed/<placeholder>"},
+      { "title": "Clothing", "youtube": "https://www.youtube.com/embed/<placeholder>"},
+      { "title": "Daily Activities", "youtube": "https://www.youtube.com/embed/<placeholder>"},
+      { "title": "Transportation", "youtube": "https://www.youtube.com/embed/<placeholder>"},
+      { "title": "Animals", "youtube": "https://www.youtube.com/embed/<placeholder>"},
+      { "title": "Health and Wellness", "youtube": "https://www.youtube.com/embed/<placeholder>"},
+      { "title": "Describing Personality and Appearances", "youtube": "https://www.youtube.com/embed/<placeholder>"}
+    ]
+    const template = document.querySelector('template#course-item').innerHTML;
+
+    let html = "";
+    for (let i = 0; i < data.length; i++) {
+      const item = data[i];
+      const id = item.title.toLocaleLowerCase().replaceAll(" ", "-");
+      html += template.replaceAll("{{id}}", id).replace("{{title}}", item.title).replace("{{youtube}}", item.youtube);
+    }
+    document.getElementById("outline").innerHTML = html;
+  </script>
+</body>
+
+</html>
