@@ -18,6 +18,8 @@
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
+  <script src="https://www.google.com/recaptcha/api.js?render=6LfNbFkpAAAAACRDw-PNuGINY7sgAFJAhOM5CWmg"></script>
+
   <title>English Speaking for Russians</title>
 
   <style>
@@ -207,8 +209,13 @@
 
   <template id="course-item">
     <li class="course-item">
-      <div class="text"><a id="{{id}}" href="index.html#{{id}}"
-          data-youtube="{{youtube}}">{{title}}</a></div>
+      <div class="text">
+        <div>
+          <a id="{{id}}" href="index.html#{{id}}" data-youtube="{{youtube}}">{{title}}</a>
+        </div>
+        <ol class="lessons">
+        </ol>
+      </div>
     </li>
   </template>
 
@@ -221,7 +228,13 @@
     const data = [
       { "title": "Introduction", "youtube": "https://www.youtube.com/embed/<placeholder>"},
       { "title": "Introducing Yourself", "youtube": "https://www.youtube.com/embed/<placeholder>"},
-      { "title": "Telling Time and Dates", "youtube": "https://www.youtube.com/embed/<placeholder>"},
+      { "title": "Telling Time and Dates", "youtube": "https://www.youtube.com/embed/<placeholder>",
+        "lessons": [
+          {"id": "telling-time-and-dates-lession-1", "title": "Lession 1", "youtube": "https://www.youtube.com/embed/<placeholder>"},
+          {"id": "telling-time-and-dates-lession-2", "title": "Lession 2", "youtube": "https://www.youtube.com/embed/<placeholder>"},
+          {"id": "telling-time-and-dates-lession-3", "title": "Lession 3", "youtube": "https://www.youtube.com/embed/<placeholder>"}
+        ]
+      },
       { "title": "The Weather", "youtube": "https://www.youtube.com/embed/<placeholder>"},
       { "title": "Family and Friends", "youtube": "https://www.youtube.com/embed/<placeholder>"},
       { "title": "Basic Needs", "youtube": "https://www.youtube.com/embed/<placeholder>"},
@@ -242,11 +255,85 @@
     let html = "";
     for (let i = 0; i < data.length; i++) {
       const item = data[i];
-      const id = item.title.toLocaleLowerCase().replaceAll(" ", "-");
+      const id = item.id ? item.id : item.title.toLocaleLowerCase().replaceAll(" ", "-");
       html += template.replaceAll("{{id}}", id).replace("{{title}}", item.title).replace("{{youtube}}", item.youtube);
     }
     document.getElementById("outline").innerHTML = html;
   </script>
-</body>
 
+  <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+  <script type="module">
+    const checkLogin = async () => {
+      try {
+        const token = await auth0Client.getTokenSilently();
+        await profile();
+        return token;
+      } catch (err) {
+        await auth0Client.loginWithRedirect({
+          authorizationParams: {
+            // I am using ngrok locally so auth0 can use this callback.
+            redirect_uri: window.location.origin + "/courses/english-speaking-for-russians/",
+          },
+        });
+      }
+    };
+
+    const signUp = async () => {
+      await auth0Client.loginWithRedirect({
+        authorizationParams: {
+          // I am using ngrok locally so auth0 can use this callback.
+          redirect_uri: "http://127.0.0.1:7777/courses/english-speaking-for-russians",
+          screen_hint: "signup"
+        },
+      });
+    };
+
+    const profile = async () => {
+      const isAuthenticated = await auth0Client.isAuthenticated();
+      const userProfile = await auth0Client.getUser();
+      console.log(userProfile);
+    };
+
+    const auth0Client = await auth0.createAuth0Client({
+      domain: "dev-b4abuxwyzw0h142d.us.auth0.com",
+      clientId: "Bon0AwojtGMyumOj3yORqKt8krEODYHy",
+      // authorizationParams: {
+      //   // The audience is set so this api claim will be in the token.
+      //   audience: "https://api.everybodyelses.com",
+      // },
+    });
+
+    if (
+        location.search.includes("state=") &&
+        (location.search.includes("code=") ||
+            location.search.includes("error="))
+    ) {
+        await auth0Client.handleRedirectCallback();
+        window.history.replaceState({}, document.title, "/");
+        await profile();
+        // await updateLoginStatus();
+    } else {
+        try {
+            await checkLogin();
+            // await updateLoginStatus();
+        } catch (e) {
+            console.error("Login check failed:", e);
+            // await updateLoginStatus();
+        }
+    }
+
+    // if (
+    //   location.search.includes("state=") &&
+    //   (location.search.includes("code=") ||
+    //     location.search.includes("error="))
+    // ) {
+    //   await auth0Client.handleRedirectCallback();
+    //   window.history.replaceState({}, document.title, "/");
+    //   await profile();
+    // } else {
+    //   // Auto login
+    //   await checkLogin();
+    // }
+  </script>
+</body>
 </html>
