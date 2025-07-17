@@ -25,7 +25,7 @@
   <style>
     body {
       font-family: 'Open Sans', sans-serif;
-    }    
+    }
   </style>
   <style>
     .video-bottom-right {
@@ -85,52 +85,70 @@
     .bg-primary {
       background-color: #0F0F0F !important;
     }
+
+    #profile-name {
+      color: whitesmoke;
+    }
   </style>
 </head>
 
 <body>
 
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top" style="padding-left: 12px;">
-	  <a class="navbar-brand" href="#">Learn to Decode</a>
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	    <span class="navbar-toggler-icon"></span>
-	  </button>
+    <a class="navbar-brand" href="#">Learn to Decode</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-	    <ul class="navbar-nav mr-auto">
-	      <li class="nav-item active">
-	        <a class="nav-link" href="/#">Home <span class="sr-only">(current)</span></a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link  disabled" aria-disabled="true" href="/about.html">About</a>
-	      </li>
-		  <li class="nav-item">
-	        <a class="nav-link disabled" aria-disabled="true" href="/contact.html">Contact</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" onclick="passcode()">Resources</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="/projects/">Projects</a>
-	      </li>
-		  <li class="nav-item">
-	        <a class="nav-link active" href="/courses/english-speaking-for-russians#introduction">English Speaking for Russians</a>
-	      </li>
-		</ul>
-	  </div>
-	</nav>
-  <!-- <nav id="nav-bar" class="navbar navbar-dark bg-primary">
-    <div class="container-fluid">
-      <div>
-        <div class="float-start">
-          <a class="navbar-brand fs-2" href="/"><i class="bi bi-clouds" style="font-size: 2rem; color: white;"></i></a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  disabled" aria-disabled="true" href="/about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true" href="/contact.html">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" onclick="passcode()">Resources</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/projects/">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/courses/english-speaking-for-russians#introduction">English Speaking for
+            Russians</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="navbar-nav ms-auto">
+      <div id="navbar-profile" class="d-none align-items-center">
+        <div class="dropdown">
+          <img id="profile-picture" src="" alt="Profile" class="rounded-circle me-2 dropdown-toggle" width="32"
+            height="32" data-bs-toggle="dropdown" aria-expanded="false" role="button" style="cursor: pointer;">
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <h6 class="dropdown-header" id="dropdown-profile-name">User Profile</h6>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#" id="logout-dropdown">
+                <i class="bi bi-box-arrow-right"></i> Logout
+              </a></li>
+          </ul>
         </div>
-        <div class="float-start ms-2">
-          <a class="navbar-brand fs-2" href="/">Learn to Decode - English Speaking for Russians</a>
-        </div>
+        <span id="profile-name" class="me-3"></span>
+      </div>
+      <div id="navbar-login" class="d-none">
+        <button type="button" id="login" class="btn btn-sonatype">Get API Access</button>
       </div>
     </div>
-  </nav> -->
+  </nav>
 
   <div class="container-fluid px-4 mt-4" style="padding-top: 50px;">
     <div class="row gx-5">
@@ -226,29 +244,30 @@
   <script src="js/video-lesson.js"></script>
   <script>
     const data = [
-      { "title": "Introduction", "youtube": "https://www.youtube.com/embed/<placeholder>"},
-      { "title": "Introducing Yourself", "youtube": "https://www.youtube.com/embed/<placeholder>"},
-      { "title": "Telling Time and Dates", "youtube": "https://www.youtube.com/embed/<placeholder>",
+      { "title": "Introduction", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+      { "title": "Introducing Yourself", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+      {
+        "title": "Telling Time and Dates", "youtube": "https://www.youtube.com/embed/<placeholder>",
         "lessons": [
-          {"id": "telling-time-and-dates-lession-1", "title": "Lession 1", "youtube": "https://www.youtube.com/embed/<placeholder>"},
-          {"id": "telling-time-and-dates-lession-2", "title": "Lession 2", "youtube": "https://www.youtube.com/embed/<placeholder>"},
-          {"id": "telling-time-and-dates-lession-3", "title": "Lession 3", "youtube": "https://www.youtube.com/embed/<placeholder>"}
+          { "id": "telling-time-and-dates-lession-1", "title": "Lession 1", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+          { "id": "telling-time-and-dates-lession-2", "title": "Lession 2", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+          { "id": "telling-time-and-dates-lession-3", "title": "Lession 3", "youtube": "https://www.youtube.com/embed/<placeholder>" }
         ]
       },
-      { "title": "The Weather", "youtube": "https://www.youtube.com/embed/<placeholder>"},
-      { "title": "Family and Friends", "youtube": "https://www.youtube.com/embed/<placeholder>"},
-      { "title": "Basic Needs", "youtube": "https://www.youtube.com/embed/<placeholder>"},
-      { "title": "Describing Everyday Objects", "youtube": "https://www.youtube.com/embed/<placeholder>"},
-      { "title": "Hobbies and Interests", "youtube": "https://www.youtube.com/embed/<placeholder>"},
-      { "title": "Directions", "youtube": "https://www.youtube.com/embed/<placeholder>"},
-      { "title": "Home and Surroundings", "youtube": "https://www.youtube.com/embed/<placeholder>"},
-      { "title": "Nature and Geography", "youtube": "https://www.youtube.com/embed/<placeholder>"},
-      { "title": "Clothing", "youtube": "https://www.youtube.com/embed/<placeholder>"},
-      { "title": "Daily Activities", "youtube": "https://www.youtube.com/embed/<placeholder>"},
-      { "title": "Transportation", "youtube": "https://www.youtube.com/embed/<placeholder>"},
-      { "title": "Animals", "youtube": "https://www.youtube.com/embed/<placeholder>"},
-      { "title": "Health and Wellness", "youtube": "https://www.youtube.com/embed/<placeholder>"},
-      { "title": "Describing Personality and Appearances", "youtube": "https://www.youtube.com/embed/<placeholder>"}
+      { "title": "The Weather", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+      { "title": "Family and Friends", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+      { "title": "Basic Needs", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+      { "title": "Describing Everyday Objects", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+      { "title": "Hobbies and Interests", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+      { "title": "Directions", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+      { "title": "Home and Surroundings", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+      { "title": "Nature and Geography", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+      { "title": "Clothing", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+      { "title": "Daily Activities", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+      { "title": "Transportation", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+      { "title": "Animals", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+      { "title": "Health and Wellness", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+      { "title": "Describing Personality and Appearances", "youtube": "https://www.youtube.com/embed/<placeholder>" }
     ]
     const template = document.querySelector('template#course-item').innerHTML;
 
@@ -282,7 +301,7 @@
       await auth0Client.loginWithRedirect({
         authorizationParams: {
           // I am using ngrok locally so auth0 can use this callback.
-          redirect_uri: "http://127.0.0.1:7777/courses/english-speaking-for-russians",
+          redirect_uri: window.location.origin + "/courses/english-speaking-for-russians",
           screen_hint: "signup"
         },
       });
@@ -292,48 +311,101 @@
       const isAuthenticated = await auth0Client.isAuthenticated();
       const userProfile = await auth0Client.getUser();
       console.log(userProfile);
-    };
+
+      // Update navbar profile display
+      const navbarProfile = document.getElementById('navbar-profile');
+      const navbarLogin = document.getElementById('navbar-login');
+      const profilePicture = document.getElementById('profile-picture');
+      const profileName = document.getElementById('profile-name');
+      const dropdownProfileName = document.getElementById('dropdown-profile-name');
+
+      if (isAuthenticated && userProfile) {
+        // Show profile section, hide login buttons
+        navbarProfile.classList.remove('d-none');
+        navbarProfile.classList.add('d-flex');
+        navbarLogin.classList.add('d-none');
+        // Hide all login buttons
+        const allLoginButtons = document.querySelectorAll("#login");
+        allLoginButtons.forEach(btn => btn.classList.add('d-none'));
+
+        // Set profile picture (use Auth0 picture or fallback to avatar)
+        const profilePictureUrl = userProfile.picture || `https://ui-avatars.com/api/?name=${encodeURIComponent(userProfile.name || userProfile.email || 'User')}&size=32&background=007bff&color=fff`;
+        profilePicture.src = profilePictureUrl;
+        profilePicture.alt = `${userProfile.name || 'User'} profile picture`;
+
+        // Set profile name
+        const displayName = userProfile.name || userProfile.email || 'User';
+        profileName.textContent = displayName;
+        dropdownProfileName.textContent = displayName;
+        // Show profile name in navbar (make it visible)
+        profileName.classList.remove('d-none');
+      } else {
+        // Show login buttons, hide profile section
+        navbarProfile.classList.add('d-none');
+        navbarProfile.classList.remove('d-flex');
+        navbarLogin.classList.remove('d-none');
+        // Show all login buttons
+        const allLoginButtons = document.querySelectorAll("#login");
+        allLoginButtons.forEach(btn => btn.classList.remove('d-none'));
+        // Hide profile name
+        if (profileName) profileName.classList.add('d-none');
+      }
+    }
 
     const auth0Client = await auth0.createAuth0Client({
       domain: "dev-b4abuxwyzw0h142d.us.auth0.com",
       clientId: "Bon0AwojtGMyumOj3yORqKt8krEODYHy",
-      // authorizationParams: {
-      //   // The audience is set so this api claim will be in the token.
-      //   audience: "https://api.everybodyelses.com",
-      // },
+      authorizationParams: {
+        // The audience is set so this api claim will be in the token.
+        audience: "https://api.everybodyelses.com",
+      },
     });
 
     if (
-        location.search.includes("state=") &&
-        (location.search.includes("code=") ||
-            location.search.includes("error="))
+      location.search.includes("state=") &&
+      (location.search.includes("code=") ||
+        location.search.includes("error="))
     ) {
-        await auth0Client.handleRedirectCallback();
-        window.history.replaceState({}, document.title, "/");
-        await profile();
-        // await updateLoginStatus();
+      await auth0Client.handleRedirectCallback();
+      window.history.replaceState({}, document.title, "/courses/english-speaking-for-russians/");
+      await profile();
     } else {
-        try {
-            await checkLogin();
-            // await updateLoginStatus();
-        } catch (e) {
-            console.error("Login check failed:", e);
-            // await updateLoginStatus();
-        }
+      try {
+        await checkLogin();
+      } catch (e) {
+        console.error("Login check failed:", e);
+      }
     }
 
-    // if (
-    //   location.search.includes("state=") &&
-    //   (location.search.includes("code=") ||
-    //     location.search.includes("error="))
-    // ) {
-    //   await auth0Client.handleRedirectCallback();
-    //   window.history.replaceState({}, document.title, "/");
-    //   await profile();
-    // } else {
-    //   // Auto login
-    //   await checkLogin();
-    // }
+    const loginButtons = document.querySelectorAll("#login");
+    loginButtons.forEach(button => {
+      button.addEventListener("click", async (e) => {
+        await checkLogin();
+      });
+    });
+
+    const logoutButton = document.getElementById("logout");
+    if (logoutButton) {
+      logoutButton.addEventListener("click", async (e) => {
+        auth0Client.logout({
+          returnTo: window.location.origin + "/",
+          clientID: "Bon0AwojtGMyumOj3yORqKt8krEODYHy",
+        });
+      });
+    }
+
+    // Logout from dropdown menu
+    const logoutDropdown = document.getElementById("logout-dropdown");
+    if (logoutDropdown) {
+      logoutDropdown.addEventListener("click", async (e) => {
+        e.preventDefault();
+        auth0Client.logout({
+          returnTo: window.location.origin + "/",
+          clientID: "Bon0AwojtGMyumOj3yORqKt8krEODYHy",
+        });
+      });
+    }
   </script>
 </body>
+
 </html>
