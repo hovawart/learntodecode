@@ -282,6 +282,8 @@
 
   <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
   <script type="module">
+    let baseUrl = window.location.origin;
+    baseUrl = "https://learntodecode.com/"
     const checkLogin = async () => {
       try {
         const token = await auth0Client.getTokenSilently();
@@ -291,7 +293,7 @@
         await auth0Client.loginWithRedirect({
           authorizationParams: {
             // I am using ngrok locally so auth0 can use this callback.
-            redirect_uri: window.location.origin + "/courses/english-speaking-for-russians/",
+            redirect_uri: baseUrl + "/courses/english-speaking-for-russians/",
           },
         });
       }
@@ -301,7 +303,7 @@
       await auth0Client.loginWithRedirect({
         authorizationParams: {
           // I am using ngrok locally so auth0 can use this callback.
-          redirect_uri: window.location.origin + "/courses/english-speaking-for-russians",
+          redirect_uri: baseUrl + "/courses/english-speaking-for-russians",
           screen_hint: "signup"
         },
       });
@@ -388,7 +390,7 @@
     if (logoutButton) {
       logoutButton.addEventListener("click", async (e) => {
         auth0Client.logout({
-          returnTo: window.location.origin + "/",
+          returnTo: baseUrl + "/",
           clientID: "Bon0AwojtGMyumOj3yORqKt8krEODYHy",
         });
       });
@@ -400,7 +402,7 @@
       logoutDropdown.addEventListener("click", async (e) => {
         e.preventDefault();
         auth0Client.logout({
-          returnTo: window.location.origin + "/",
+          returnTo: baseUrl + "/",
           clientID: "Bon0AwojtGMyumOj3yORqKt8krEODYHy",
         });
       });
