@@ -229,10 +229,21 @@
     <li class="course-item">
       <div class="text">
         <div>
-          <a id="{{id}}" href="index.html#{{id}}" data-youtube="{{youtube}}">{{title}}</a>
+          <a id="{{id}}" href="#{{id}}" data-youtube="{{youtube}}">{{title}}</a>
         </div>
-        <ol class="lessons">
+        <ol type="a">
+        {{lessons}}
         </ol>
+      </div>
+    </li>
+  </template>
+
+  <template id="lesson-item">
+    <li class="lesson-item">
+      <div class="text">
+        <div>
+          <a id="{{id}}" href="#{{id}}" data-youtube="{{youtube}}">{{title}}</a>
+        </div>
       </div>
     </li>
   </template>
@@ -249,41 +260,102 @@
       {
         "title": "Telling Time and Dates", "youtube": "https://www.youtube.com/embed/<placeholder>",
         "lessons": [
-          { "id": "telling-time-and-dates-lession-1", "title": "Lession 1", "youtube": "https://www.youtube.com/embed/<placeholder>" },
-          { "id": "telling-time-and-dates-lession-2", "title": "Lession 2", "youtube": "https://www.youtube.com/embed/<placeholder>" },
-          { "id": "telling-time-and-dates-lession-3", "title": "Lession 3", "youtube": "https://www.youtube.com/embed/<placeholder>" }
+          { "title": "Lesson 1", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+          { "title": "Lesson 2", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+          { "title": "Lesson 3", "youtube": "https://www.youtube.com/embed/<placeholder>" }
         ]
       },
       { "title": "The Weather", "youtube": "https://www.youtube.com/embed/<placeholder>" },
-      { "title": "Family and Friends", "youtube": "https://www.youtube.com/embed/<placeholder>" },
-      { "title": "Basic Needs", "youtube": "https://www.youtube.com/embed/<placeholder>" },
-      { "title": "Describing Everyday Objects", "youtube": "https://www.youtube.com/embed/<placeholder>" },
-      { "title": "Hobbies and Interests", "youtube": "https://www.youtube.com/embed/<placeholder>" },
-      { "title": "Directions", "youtube": "https://www.youtube.com/embed/<placeholder>" },
-      { "title": "Home and Surroundings", "youtube": "https://www.youtube.com/embed/<placeholder>" },
-      { "title": "Nature and Geography", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+      { "title": "Family and Friends", "youtube": "https://www.youtube.com/embed/<placeholder>",
+        "lessons": [
+          { "title": "Lesson 1", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+          { "title": "Lesson 2", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+        ]
+      },
+      { "title": "Basic Needs", "youtube": "https://www.youtube.com/embed/<placeholder>",
+        "lessons": [
+          { "title": "Lesson 1", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+          { "title": "Lesson 2", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+        ]
+      },
+      { "title": "Describing Everyday Objects", "youtube": "https://www.youtube.com/embed/<placeholder>",
+        "lessons": [
+          { "title": "Lesson 1", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+          { "title": "Lesson 2", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+          { "title": "Lesson 3", "youtube": "https://www.youtube.com/embed/<placeholder>" }
+        ]
+      },
+      { "title": "Hobbies and Interests", "youtube": "https://www.youtube.com/embed/<placeholder>",
+        "lessons": [
+          { "title": "Lesson 1", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+          { "title": "Lesson 2", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+        ]
+      },
+      { "title": "Directions", "youtube": "https://www.youtube.com/embed/<placeholder>",
+        "lessons": [
+          { "title": "Lesson 1", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+          { "title": "Lesson 2", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+        ]
+      },
+      { "title": "Home and Surroundings", "youtube": "https://www.youtube.com/embed/<placeholder>",
+        "lessons": [
+          { "title": "Lesson 1", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+          { "title": "Lesson 2", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+          { "title": "Lesson 3", "youtube": "https://www.youtube.com/embed/<placeholder>" }
+        ]
+      },
+      { "title": "Nature and Geography", "youtube": "https://www.youtube.com/embed/<placeholder>",
+        "lessons": [
+          { "title": "Lesson 1", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+          { "title": "Lesson 2", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+        ]
+      },
       { "title": "Clothing", "youtube": "https://www.youtube.com/embed/<placeholder>" },
       { "title": "Daily Activities", "youtube": "https://www.youtube.com/embed/<placeholder>" },
       { "title": "Transportation", "youtube": "https://www.youtube.com/embed/<placeholder>" },
-      { "title": "Animals", "youtube": "https://www.youtube.com/embed/<placeholder>" },
-      { "title": "Health and Wellness", "youtube": "https://www.youtube.com/embed/<placeholder>" },
-      { "title": "Describing Personality and Appearances", "youtube": "https://www.youtube.com/embed/<placeholder>" }
+      { "title": "Animals", "youtube": "https://www.youtube.com/embed/<placeholder>",
+        "lessons": [
+          { "title": "Lesson 1", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+          { "title": "Lesson 2", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+        ]
+      },
+      { "title": "Health and Wellness", "youtube": "https://www.youtube.com/embed/<placeholder>",
+        "lessons": [
+          { "title": "Lesson 1", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+          { "title": "Lesson 2", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+          { "title": "Lesson 3", "youtube": "https://www.youtube.com/embed/<placeholder>" }
+        ]
+       },
+       { "title": "Describing Personality and Appearances", "youtube": "https://www.youtube.com/embed/<placeholder>",
+        "lessons": [
+          { "title": "Lesson 1", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+          { "title": "Lesson 2", "youtube": "https://www.youtube.com/embed/<placeholder>" },
+        ]
+       }
     ]
     const template = document.querySelector('template#course-item').innerHTML;
 
     let html = "";
     for (let i = 0; i < data.length; i++) {
       const item = data[i];
+      let lessonsHtml = "";
+      if (item.lessons && item.lessons.length > 0) {
+        for (let j = 0; j < item.lessons.length; j++) {
+          let lesson = item.lessons[j];
+          const id = lesson.id ? lesson.id : item.id ? item.id : item.title.toLocaleLowerCase().replaceAll(" ", "-") + "-" + lesson.title.toLocaleLowerCase().replaceAll(" ", "-");
+          lessonsHtml += template.replaceAll("{{id}}", id).replace("{{title}}", lesson.title).replace("{{youtube}}", lesson.youtube).replace("{{lessons}}", "");
+        }
+      }
       const id = item.id ? item.id : item.title.toLocaleLowerCase().replaceAll(" ", "-");
-      html += template.replaceAll("{{id}}", id).replace("{{title}}", item.title).replace("{{youtube}}", item.youtube);
+      html += template.replaceAll("{{id}}", id).replace("{{title}}", item.title).replace("{{youtube}}", item.youtube).replace("{{lessons}}", lessonsHtml);
     }
     document.getElementById("outline").innerHTML = html;
   </script>
 
   <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
   <script type="module">
-    let baseUrl = window.location.origin;
-    baseUrl = "https://learntodecode.com"
+    // let baseUrl = "http://127.0.0.1:7777";
+    let baseUrl = "https://learntodecode.com"
     const checkLogin = async () => {
       try {
         const token = await auth0Client.getTokenSilently();
@@ -293,7 +365,7 @@
         await auth0Client.loginWithRedirect({
           authorizationParams: {
             // I am using ngrok locally so auth0 can use this callback.
-            redirect_uri: baseUrl + "/courses/english-speaking-for-russians/",
+            redirect_uri: baseUrl + "/courses/english-speaking-for-russians/" + window.location.hash,
           },
         });
       }
@@ -303,7 +375,7 @@
       await auth0Client.loginWithRedirect({
         authorizationParams: {
           // I am using ngrok locally so auth0 can use this callback.
-          redirect_uri: baseUrl + "/courses/english-speaking-for-russians",
+          redirect_uri: baseUrl + "/courses/english-speaking-for-russians/" + window.location.hash,
           screen_hint: "signup"
         },
       });
@@ -369,7 +441,7 @@
         location.search.includes("error="))
     ) {
       await auth0Client.handleRedirectCallback();
-      window.history.replaceState({}, document.title, "/courses/english-speaking-for-russians/");
+      window.history.replaceState({}, document.title, "/courses/english-speaking-for-russians/" + window.location.hash);
       await profile();
     } else {
       try {
